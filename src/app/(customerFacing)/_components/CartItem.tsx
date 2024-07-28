@@ -3,6 +3,7 @@ import { formatCurrency } from '@/lib/formatters';
 
 import { ImageIcon, X } from 'lucide-react';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageProvider';
 
 export default function CartItem({
   product,
@@ -12,7 +13,8 @@ export default function CartItem({
   invoice?: boolean;
 }) {
   const { removeItem } = useCart();
-  const label = 'Naturkosmetik';
+  const { language } = useLanguage();
+  const label = language == 'en' ? 'Natural Cosmetic' : 'Naturkosmetik';
   return (
     <div className='space-y-3 py-2'>
       <div className='flex items-start justify-between gap-4'>
@@ -50,7 +52,7 @@ export default function CartItem({
                   onClick={() => removeItem(product.id)}
                   className='flex items-center gap-0.5'>
                   <X className='w-3 h-4' />
-                  Entfernen
+                  {language == 'en' ? 'Remove' : 'Entfernen'}
                 </button>
               </div>
             )}

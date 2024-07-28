@@ -6,12 +6,12 @@ import { SHIPPING } from '../../../consts';
 
 export async function saveOrder(
   address: string,
+  customerName: string,
   email: string,
   items: Product[],
   pricePaidInCents: number
-  // stripePaymentIntentId: string
 ) {
-  console.log('ITEMS: ', items);
+//  console.log('ITEMS: ', items);
   // Create the order first
   const order = await db.order.create({
     data: {
@@ -19,7 +19,7 @@ export async function saveOrder(
       email,
       pricePaidInCents,
       shippingCost: SHIPPING,
-      // stripePaymentIntentId,
+      customerName,
     },
   });
 
@@ -35,5 +35,12 @@ export async function saveOrder(
     data: orderedProductsData,
   });
 
-  return order;
+  // Get the actual array of all created orderedProducts
+  const allOrderedProducts = await db.orderedProduct.findMany({
+    where: {
+      orderId: order.id,
+    },
+  });
+
+  return { orderedProducts: allOrderedProducts, order };
 }

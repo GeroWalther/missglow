@@ -111,7 +111,7 @@ function Form({ toPay, items }: { toPay: number; items: CartItem[] }) {
     }
 
     setIsLoading(true);
-    console.log('EMAIL from Checkkout: ', email);
+    // console.log('EMAIL from Checkkout: ', email);
     // const pricePaidInCents = toPay * 100;
     // const shippingAddress = `${address.line1}, ${
     //   address.line2 ? address.line2 + ', ' : ''

@@ -78,6 +78,13 @@ model Order {
   shippingCost     Float
   orderedProducts  OrderedProduct[]
   address          String
-  email            String?
-  // stripePaymentIntentId  String
+  email            String
+  customerName     String
+}
+
+model DiscountCode {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  code      String  @unique
+  discountInPercent  Float
+  expiresAt DateTime
 }

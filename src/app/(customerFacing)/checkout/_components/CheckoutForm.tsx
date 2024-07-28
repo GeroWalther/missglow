@@ -25,10 +25,12 @@ import {
 import { useMediaQuery } from 'usehooks-ts';
 import CheckoutStripe from './CheckoutStripe';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { useLanguage } from '@/contexts/LanguageProvider';
 
 export default function CheckoutForm() {
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
+  const { language } = useLanguage();
 
   if (isDesktop) {
     return (
@@ -38,19 +40,22 @@ export default function CheckoutForm() {
             className={buttonVariants({
               className: 'w-full bg-pink-500',
             })}>
-            Zur Kasse
+            {language == 'en' ? 'Checkout' : 'Zur Kasse'}
           </Button>
         </DialogTrigger>
         <DialogContent className='w-full overflow-y-scroll max-h-screen'>
           <DialogHeader>
             <DialogTitle className='font-bold text-stone-800'>
-              Kasse
+              {language == 'en' ? 'Checkout' : 'Kasse'}
             </DialogTitle>
           </DialogHeader>
           <DialogDescription className='font-semibold text-stone-700'>
-            Bestellformular <br />
+            {language == 'en' ? 'Submitting an order' : ' Bestellformular'}{' '}
+            <br />
             <span className='font-semibold text-muted-foreground'>
-              (Gib deine Addressen und Zahlungsinformationen an um zu bestellen)
+              {language == 'en'
+                ? '(Give us your Address and Payment data in order to checkout.)'
+                : '  (Gib deine Addressen und Zahlungsinformationen an um zu bestellen)'}
             </span>
           </DialogDescription>
           <CheckoutStripe />

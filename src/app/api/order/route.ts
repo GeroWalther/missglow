@@ -34,4 +34,5 @@ async function POST(req: NextRequest) {
   return Response.json({ message: "Order has been shipped" }, { status: 200 });
 }
 
-export { POST };
+async function GET(req: NextRequest) {}
+export { GET, POST };

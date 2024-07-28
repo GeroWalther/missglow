@@ -23,6 +23,7 @@ import { useLanguage } from '@/contexts/LanguageProvider';
 import { SHIPPING } from '../../../../consts';
 import useCartTotals from '@/hooks/use-to-pay';
 import CheckoutForm from '../checkout/_components/CheckoutForm';
+import DiscountCodeInput from './DiscountCodeInput';
 
 export default function Cart() {
   const { items } = useCart();
@@ -68,6 +69,7 @@ export default function Cart() {
             </ScrollArea>
             <div className='space-y-4 pr-6'>
               <Separator />
+              <DiscountCodeInput />
               <div className='space-y-1-5 text-sm'>
                 <div className='flex'>
                   <span className='flex-1'>Subtotal</span>

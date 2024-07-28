@@ -61,7 +61,7 @@ export default function MobilNav({ children }: { children: ReactNode }) {
                 width={250}
                 height={50}
                 alt='logo'
-                className='ml-10 mt-1 -mb-10'
+                className=' mt-1 -mb-10'
               />
             </SheetFooter>
           </ScrollArea>

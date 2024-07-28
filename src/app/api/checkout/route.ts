@@ -18,6 +18,7 @@ export async function POST(
     }
 
     const paymentIntent = await stripe.paymentIntents.create({
+      // payment_method_types: ['card', 'klarna'],
       amount: totalAmountinCents,
       currency: 'EUR',
       description: 'Miss Glow Bestellung',
