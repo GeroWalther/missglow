@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/table";
 import { Fragment } from "react";
 import getEmails from "../_actions/getEmails";
+import { SelectDiscount } from "../_components/DiscountComponent";
 import DownloadCsv from "../_components/DownloadCsv";
 export default async function CustomerAdminPage() {
   const emails = await getEmails();
@@ -20,8 +21,12 @@ export default async function CustomerAdminPage() {
 
   return (
     <section>
-      <DownloadCsv email={emails} />
+      <Card className="mb-4 p-5">
+        <SelectDiscount />
+      </Card>
+
       <Card>
+        <DownloadCsv email={emails} />
         <Table>
           <TableHeader>
             <TableRow>
