@@ -1,10 +1,8 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { SHIPPING } from "../../consts";
 import { CartItem } from "./use-cart-hook";
 
-const useCartTotals = (items: CartItem[]) => {
-  const [discount, setDiscount] = useState<number>(0);
-
+const useCartTotals = (items: CartItem[], discount: number) => {
   const itemCount = useMemo(() => {
     return items.reduce((acc, item) => acc + item.product.quantity, 0);
   }, [items]);
@@ -23,12 +21,14 @@ const useCartTotals = (items: CartItem[]) => {
     [totalCart, discount]
   );
 
-  const setNewDiscount = (x: number) => {
-    setDiscount(x);
-    alert("Discount set to: " + x);
+  return {
+    itemCount,
+    subItemTotal,
+    totalCart,
+    toPay,
+    discountedPrice:
+      totalCart - totalCart * (discount > 0 ? discount / 100 : 1),
   };
-
-  return { itemCount, subItemTotal, totalCart, toPay, setNewDiscount };
 };
 
 export default useCartTotals;

@@ -26,10 +26,13 @@ import CheckoutForm from '../checkout/_components/CheckoutForm';
 import DiscountCodeInput from './DiscountCodeInput';
 
 export default function Cart() {
-  const { items } = useCart();
+  const { items, discount } = useCart();
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
-  const { itemCount, totalCart, toPay } = useCartTotals(items);
+  const { itemCount, totalCart, toPay, discountedPrice } = useCartTotals(
+    items,
+    discount
+  );
   const { language } = useLanguage();
 
   useEffect(() => {
@@ -75,16 +78,39 @@ export default function Cart() {
                   <span className='flex-1'>Subtotal</span>
                   <span>{formatCurrency(totalCart)}</span>
                 </div>
+                {discount > 0 && (
+                  <>
+                    <div className='flex'>
+                      <span className='flex-1 font-bold text-pink-700'>
+                        {language == 'de' && 'Rabatt'}
+                        {language == 'en' && 'Discount'}
+                      </span>
+                      <span className='font-bold text-pink-700'>
+                        - {discount} %
+                      </span>
+                    </div>
+                    <div className='flex'>
+                      <span className='flex-1'></span>
+                      <span>{formatCurrency(discountedPrice)}</span>
+                    </div>
+                  </>
+                )}
+
                 <div className='flex'>
                   <span className='flex-1'>
-                    {language == 'de' && ' Versand'}
+                    {language == 'de' && 'Versand'}
                     {language == 'en' && 'Shipping'}
                   </span>
                   <span>{formatCurrency(SHIPPING)}</span>
                 </div>
+
                 <div className='flex'>
                   <span className='flex-1'>Total</span>
-                  <span>{formatCurrency(toPay)}</span>
+                  {discount > 0 ? (
+                    <span>{formatCurrency(discountedPrice + SHIPPING)}</span>
+                  ) : (
+                    <span>{formatCurrency(toPay)}</span>
+                  )}
                 </div>
               </div>
               <SheetFooter>

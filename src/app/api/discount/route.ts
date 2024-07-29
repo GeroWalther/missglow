@@ -1,7 +1,7 @@
 import db from "@/db";
 import { NextRequest, NextResponse } from "next/server";
 
-const POST = async (req: NextRequest) => {
+export async function POST(req: NextRequest) {
   const body = await req.json();
   const { code, date, amount } = body;
   if (!code || !date) {
@@ -27,9 +27,9 @@ const POST = async (req: NextRequest) => {
   }
 
   return NextResponse.json({ discount }, { status: 200 });
-};
+}
 
-const DELETE = async (req: NextRequest) => {
+export async function DELETE(req: NextRequest) {
   const body = await req.json();
   const { id } = body;
   if (!id) {
@@ -58,9 +58,9 @@ const DELETE = async (req: NextRequest) => {
     },
     { status: 200 }
   );
-};
+}
 
-const PUT = async (req: NextRequest) => {
+export async function PU(req: NextRequest) {
   const body = await req.json();
 
   const { id, code, date, amount } = body;
@@ -91,6 +91,4 @@ const PUT = async (req: NextRequest) => {
   }
 
   return NextResponse.json({ message: "Discount updated" }, { status: 200 });
-};
-
-export { DELETE, POST, PUT };
+}
