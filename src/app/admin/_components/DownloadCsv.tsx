@@ -12,7 +12,7 @@ const DownloadCsv: FC<DownloadCsvProps> = ({ email }) => {
 
   return (
     <div className="p-4 mb-4">
-      <h3>Download CSV</h3>
+      <h3>Customer emails Download</h3>
 
       <CSVLink data={csvData} target="_blank" filename="MissGlow_emails.csv">
         <Button>Download</Button>

@@ -8,12 +8,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { DiscountProvider } from "@/contexts/DiscountProvider";
 import { Fragment } from "react";
+import { getDiscounts } from "../_actions/getDiscounts";
 import getEmails from "../_actions/getEmails";
-import { SelectDiscount } from "../_components/DiscountComponent";
+import CheckDiscount from "../_components/CheckDiscount";
+import { AddtDiscount } from "../_components/DiscountComponent";
 import DownloadCsv from "../_components/DownloadCsv";
 export default async function CustomerAdminPage() {
   const emails = await getEmails();
+  const getAllDiscounts = await getDiscounts();
 
   if (emails.length == 0) {
     return <ErrorComponent message="An error occurred while fetching emails" />;
@@ -21,8 +25,11 @@ export default async function CustomerAdminPage() {
 
   return (
     <section>
-      <Card className="mb-4 p-5">
-        <SelectDiscount />
+      <Card className="mb-4 p-5 flex justify-between gap-4">
+        <DiscountProvider discountDetails={getAllDiscounts}>
+          <AddtDiscount />
+          <CheckDiscount />
+        </DiscountProvider>
       </Card>
 
       <Card>

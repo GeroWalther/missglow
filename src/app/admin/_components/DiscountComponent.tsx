@@ -6,10 +6,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useDiscount } from "@/contexts/DiscountProvider";
 import { FormEvent, useState } from "react";
 
-export function SelectDiscount() {
+export function AddtDiscount() {
+  const { setDiscount } = useDiscount();
   const [date, setDate] = useState<Date | undefined>();
+  const [error, setError] = useState<string | undefined>();
+  const [data, setData] = useState<string>();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,20 +32,23 @@ export function SelectDiscount() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ code, date }),
+      body: JSON.stringify({ code, date, amount }),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
+      .then((data) => {
+        setDiscount((prev) => [...prev, data.discount]);
+      })
+      .catch((error) => setError("An error occurred while creating discount"));
   };
 
   return (
     <div className="flex flex-col items-center">
       <form onSubmit={handleSubmit} className="flex flex-col ">
-        <h3 className="text-lg w-80 mb-2 text-center">
+        <h3 className="text-lg w-80 mb-2 text-left">
           Apply discount code to all customers who signed up before a certain
           date. Select a date to apply the discount code to.
         </h3>
+        <p>{data}</p>
         <div className="mb-4 flex flex-col">
           <label htmlFor="code" className="mb-2">
             Discount code
@@ -82,6 +89,7 @@ export function SelectDiscount() {
         <Button type="submit" className="w-80 mb-2">
           Apply
         </Button>
+        {error && <p className="text-red-500">{error}</p>}
       </form>
     </div>
   );
