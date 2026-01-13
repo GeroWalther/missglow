@@ -98,6 +98,7 @@ function Form({ toPay, items }: { toPay: number; items: CartItem[] }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>();
   const [email, setEmail] = useState<string>();
+  const [name, setName] = useState<string>();
   const [address, setAddress] = useState<Address>();
 
   async function handleSubmit(e: FormEvent) {
@@ -106,6 +107,7 @@ function Form({ toPay, items }: { toPay: number; items: CartItem[] }) {
       stripe == null ||
       elements == null ||
       email == null ||
+      name == null ||
       address == null
     ) {
       return;
@@ -127,6 +129,31 @@ function Form({ toPay, items }: { toPay: number; items: CartItem[] }) {
         elements,
         confirmParams: {
           return_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/stripe/purchase-success`,
+          payment_method_data: {
+            billing_details: {
+              name: name,
+              email: email,
+              address: {
+                line1: address.line1,
+                line2: address.line2 || undefined,
+                city: address.city,
+                state: address.state,
+                postal_code: address.postal_code,
+                country: address.country,
+              },
+            },
+          },
+          shipping: {
+            name: name,
+            address: {
+              line1: address.line1,
+              line2: address.line2 || undefined,
+              city: address.city,
+              state: address.state,
+              postal_code: address.postal_code,
+              country: address.country,
+            },
+          },
         },
       })
       .then(({ error }) => {
@@ -163,7 +190,10 @@ function Form({ toPay, items }: { toPay: number; items: CartItem[] }) {
           />
           <div className='my-5'>
             <AddressElement
-              onChange={(e) => setAddress(e.value.address)}
+              onChange={(e) => {
+                setAddress(e.value.address);
+                setName(e.value.name);
+              }}
               options={{
                 mode: 'shipping',
                 autocomplete: {
