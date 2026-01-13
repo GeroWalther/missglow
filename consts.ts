@@ -1,4 +1,4 @@
-export const SHIPPING = 0; // TODO: Change back to 5 after testing!
+export const SHIPPING = 5;
 
 //prizes
 export const FRESHEZESPRICE = 64;
@@ -6,7 +6,7 @@ export const PRICEMAGICGLOW = 79;
 export const MAGICLIPSPRICE = 69;
 export const FACECLEANSERPRICE = 21;
 export const MAGICELIXIRPRICE = 94;
-export const BETOXPRICE = 1; // TODO: Change back to 89 after testing!
+export const BETOXPRICE = 89;
 //images
 export const productImgsLips = ['/MagicLips.jpg', '/lippen.jpg'];
 export const productImgsBetox = ['/betox.png', '/betox-eyes.jpeg'];
