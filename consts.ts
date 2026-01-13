@@ -1,4 +1,4 @@
-export const SHIPPING = 5;
+export const SHIPPING = 0; // TODO: Change back to 5 after testing!
 
 //prizes
 export const FRESHEZESPRICE = 64;
