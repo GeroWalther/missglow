@@ -35,9 +35,14 @@ export function AddtDiscount() {
       },
       body: JSON.stringify({ code, date, amount }),
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(async (response) => {
+        const data = await response.json();
+        if (!response.ok) {
+          setError(data.message || 'Fehler beim Erstellen des Rabattcodes');
+          return;
+        }
         setDiscount((prev) => [...prev, data.discount]);
+        setError(undefined);
       })
       .catch((error) => setError('An error occurred while creating discount'));
   };

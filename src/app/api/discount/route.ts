@@ -73,7 +73,7 @@ export async function DELETE(req: NextRequest) {
   );
 }
 
-export async function PU(req: NextRequest) {
+export async function PUT(req: NextRequest) {
   const body = await req.json();
 
   const { id, code, date, amount } = body;
