@@ -25,8 +25,11 @@ export async function GET() {
       });
     }
 
+    // Calculate isActive dynamically based on date range (don't rely on stored value)
+    const isActive = now >= salePromotion.saleStartDate && now <= salePromotion.saleUntil;
+
     return NextResponse.json({
-      isActive: salePromotion.isActive,
+      isActive,
       salePercentage: salePromotion.salePercentage,
       saleName: salePromotion.saleName,
       saleUntil: salePromotion.saleUntil.toISOString(),
