@@ -1,7 +1,7 @@
 'use client';
 import React, { ReactNode, useState } from 'react';
 
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { ScrollArea } from './ui/scroll-area';
 import { Sheet, SheetContent, SheetFooter, SheetTrigger } from './ui/sheet';
@@ -9,10 +9,24 @@ import { Button } from './ui/button';
 import Cart from '@/app/(customerFacing)/_components/Cart';
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageProvider';
+import { cn } from '@/lib/utils';
 
 export default function MobilNav({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const { language } = useLanguage();
+  const isDE = language === 'de';
+
+  const links: { href: string; label: string }[] = [
+    { href: '/', label: isDE ? 'Start' : 'Home' },
+    { href: '/magicLips', label: 'Magic Lips Serum' },
+    { href: '/freshEyes', label: 'Fresh Eyes Serum' },
+    { href: '/magicGlow', label: 'Magic Glow Cream' },
+    { href: '/magicElixir', label: 'Magic Elixir' },
+    { href: '/faceCleanser', label: 'Face Cleanser' },
+    { href: '/betoxserum', label: 'Betox Serum' },
+    { href: '/about', label: isDE ? 'Über uns' : 'About' },
+  ];
+
   return (
     <div>
       <Sheet open={open}>
@@ -21,7 +35,7 @@ export default function MobilNav({ children }: { children: ReactNode }) {
             onClick={() => setOpen((p) => !p)}
             variant='outline'
             size='icon'
-            className='shrink-0 md:hidden'>
+            className='shrink-0 md:hidden border-clay/15 text-clay'>
             <Menu className='h-5 w-5' />
             <span className='sr-only'>Toggle mobile navigation menu</span>
           </Button>
@@ -29,73 +43,48 @@ export default function MobilNav({ children }: { children: ReactNode }) {
         <SheetContent
           setOpen={setOpen}
           side='left'
-          className='flex flex-col bg-pink-500'>
-          <ScrollArea>
-            <nav className='grid gap-6 text-lg font-medium'>
-              <div className='flex items-center mb-2'>
-                <div className='bg-pink-700 p-5 rounded-md'>
-                  <Cart />
-                </div>
-              </div>
-              <Link
-                onClick={() => setOpen(false)}
-                href='/'
-                className='flex items-center rounded-xl text-white hover:text-foreground'>
-                <span>{language == 'de' ? 'Start' : 'Home'}</span>
-              </Link>
-              <Link
-                onClick={() => setOpen(false)}
-                href='/magicLips'
-                className='flex items-center rounded-xl  text-white text-muted-foreground hover:text-foreground'>
-                <span>MAGIC LIPS SERUM</span>
-              </Link>
-              <Link
-                onClick={() => setOpen(false)}
-                href='/freshEyes'
-                className='flex items-center rounded-xl  text-white text-muted-foreground hover:text-foreground'>
-                <span>FRESH EYES SERUM</span>
-              </Link>
-              <Link
-                onClick={() => setOpen(false)}
-                href='/magicGlow'
-                className='flex items-center rounded-xl  text-white text-muted-foreground hover:text-foreground'>
-                <span>MAGIC GLOW CREAM</span>
-              </Link>
-              <Link
-                onClick={() => setOpen(false)}
-                href='/magicElixir'
-                className='flex items-center rounded-xl  text-white text-muted-foreground hover:text-foreground'>
-                <span>MAGIC ELIXIR</span>
-              </Link>
-              <Link
-                onClick={() => setOpen(false)}
-                href='/faceCleanser'
-                className='flex items-center rounded-xl  text-white text-muted-foreground hover:text-foreground'>
-                <span>FACE CLEANSER</span>
-              </Link>
-              <Link
-                onClick={() => setOpen(false)}
-                href='/betoxserum'
-                className='flex items-center rounded-xl  text-white text-muted-foreground hover:text-foreground'>
-                <span>BETOX SERUM</span>
-              </Link>
-
-              <Link
-                onClick={() => setOpen(false)}
-                href='/about'
-                className='flex  text-white  items-center rounded-xl text-muted-foreground hover:text-foreground'>
-                <span>{language == 'de' ? 'Über uns' : 'About'}</span>
-              </Link>
-              <div>{children}</div>
-            </nav>
-            <SheetFooter className='mt-10 bg-pink-300 flex rounded-full justify-center'>
+          className={cn(
+            'flex flex-col bg-champagne border-r border-clay/10 p-0'
+          )}>
+          <ScrollArea className='h-full'>
+            <div className='flex items-center justify-between px-6 pt-6'>
               <Image
-                src='/missglowlogo.png'
-                width={250}
-                height={50}
-                alt='logo'
-                className=' mt-1 -mb-10'
+                src='/lippe.png'
+                width={120}
+                height={40}
+                alt='Miss Glow Beauty'
               />
+              <button
+                onClick={() => setOpen(false)}
+                aria-label='Close menu'
+                className='h-9 w-9 rounded-full flex items-center justify-center text-clay hover:bg-clay/5'>
+                <X className='h-5 w-5' />
+              </button>
+            </div>
+
+            <div className='px-6 pt-8'>
+              <div className='rounded-2xl bg-petal-soft p-4 mb-8'>
+                <Cart />
+              </div>
+            </div>
+
+            <nav className='flex flex-col gap-1 px-6 pb-6'>
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  onClick={() => setOpen(false)}
+                  href={l.href}
+                  className='font-display text-2xl text-clay hover:text-bloom transition-colors duration-300 py-2'>
+                  {l.label}
+                </Link>
+              ))}
+              <div className='mt-6'>{children}</div>
+            </nav>
+
+            <SheetFooter className='px-6 pb-8 mt-auto'>
+              <p className='font-mono text-[0.65rem] uppercase tracking-[0.22em] text-clay-soft'>
+                Miss Glow Beauty · Made in Germany
+              </p>
             </SheetFooter>
           </ScrollArea>
         </SheetContent>

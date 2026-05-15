@@ -1,41 +1,56 @@
 'use client';
 import Image from 'next/image';
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 
 const LogoOverlay: React.FC = () => {
-  const [showLogo, setShowLogo] = useState(() => true);
+  const [showLogo, setShowLogo] = useState(true);
 
   useEffect(() => {
+    // skip on subsequent visits within the session
+    if (sessionStorage.getItem('missglow-intro-seen') === '1') {
+      setShowLogo(false);
+      return;
+    }
     const timer = setTimeout(() => {
       setShowLogo(false);
-    }, 3000);
-
-    return () => {
-      clearTimeout(timer);
-    };
+      sessionStorage.setItem('missglow-intro-seen', '1');
+    }, 2400);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div>
-      {showLogo ? (
-        <div className='fixed top-0 left-0 w-screen h-screen flex justify-center items-center z-50 bg-gradient-to-r from-[#ad00ad] to-white'>
-          <div className='flex-col items-center justify-center'>
-            <Image
-              src='/lippe.png'
-              width={500}
-              height={100}
-              alt='logo'
-              priority={true}
-              className='-mt-36'
-            />
-
-            <p className='text-stone-700 ml-6 md:text-4xl text-xl md:-ml-8 md:-mt-36 -mt-40 font-semibold '>
-              Willkommen - Welcome - Bienvenue
-            </p>
+    <AnimatePresence>
+      {showLogo && (
+        <motion.div
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className='fixed inset-0 z-[60] flex justify-center items-center surface-petal'>
+          <div className='flex flex-col items-center justify-center gap-6'>
+            <motion.div
+              initial={{ y: 12, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
+              <Image
+                src='/lippe.png'
+                width={260}
+                height={80}
+                alt='Miss Glow Beauty'
+                priority
+              />
+            </motion.div>
+            <motion.p
+              initial={{ y: 8, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
+              className='font-mono text-[0.7rem] uppercase tracking-[0.3em] text-clay-soft'>
+              Willkommen · Welcome · Bienvenue
+            </motion.p>
           </div>
-        </div>
-      ) : null}
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

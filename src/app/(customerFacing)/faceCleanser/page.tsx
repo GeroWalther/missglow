@@ -96,7 +96,7 @@ export default function FaceCleanser() {
         {/* product details */}
         <div className='lg:max-w-lg lg:self-end'>
           <div className='mt-4'>
-            <h1 className='text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl'>
+            <h1 className='text-3xl font-bold tracking-tight text-clay sm:text-4xl'>
               FACE CLEANSER
             </h1>
             <div className='flex gap-3 mt-6 items-center'>
@@ -114,15 +114,15 @@ export default function FaceCleanser() {
               <div className='flex flex-col'>
                 {isActive && (
                   <div className='flex items-center gap-2'>
-                    <p className='font-medium text-stone-600 text-lg line-through'>
+                    <p className='font-medium text-clay-soft text-lg line-through'>
                       {formatCurrency(FACECLEANSERPRICE)}
                     </p>
-                    <span className='text-xs font-bold text-white bg-gradient-to-r from-orange-400 via-pink-400 to-orange-400 px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
+                    <span className='text-xs font-bold text-white bg-bloom px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
                       -{salePercentage}% {saleName}
                     </span>
                   </div>
                 )}
-                <p className='font-medium text-stone-900 text-xl'>
+                <p className='font-medium text-clay text-xl'>
                   {formatCurrency(getSalePrice(FACECLEANSERPRICE, salePercentage))}
                 </p>
               </div>
@@ -142,35 +142,35 @@ export default function FaceCleanser() {
 
             <div className='mt-4 space-y-6'>
               <ul className='list-disc ml-5'>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Reinigt die Poren und entfernt selbst das Make up für ein klares und glattes Hautgefühl'
                     : 'Cleans the pores and removes make-up for a clear and smooth skin feel'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Entzündungshemmend verfeinert das Hautbild '
                     : 'Anti-inflammatory refines the skin'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Für empfindliche Haut geeignet'
                     : 'Suitable for sensitive skin'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de' ? 'Strahlendes Hautbild' : 'Radiant skin'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Wirkung in Studien bestätigt'
                     : 'Effect confirmed in studies'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Sichtbar frischer und straffer'
                     : 'Visibly fresher and firmer'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Stellt das natürliche Hautgleichgewicht wieder her, enthält Hyaluronsäure zur optimalen Reinigung und Pflege der Gesichtshaut '
                     : 'Restores the natural skin balance, contains hyaluronic acid for optimal cleansing and care of the skin'}
@@ -221,9 +221,9 @@ export default function FaceCleanser() {
               <div className='group inline-flex text-lg text-medium'>
                 <Shield
                   aria-hidden='true'
-                  className='mr-2 h-6 w-6 flex-shrink-0 text-stone-400'
+                  className='mr-2 h-6 w-6 flex-shrink-0 text-clay-soft/70'
                 />
-                <span className=' text-sm text-muted-foreground hover:text-stone-700'>
+                <span className=' text-sm text-muted-foreground hover:text-clay'>
                   {language == 'de'
                     ? 'Kunden Service Rund um die Uhr erreichbar unter'
                     : 'Customer Service available 24/7 at '}
@@ -238,7 +238,7 @@ export default function FaceCleanser() {
 
       {/* More images and Product description */}
       <div className='md:px-10 md:pb-20 pb-5'>
-        <h4 className=' text-stone-800 font-semibold'>
+        <h4 className=' text-clay font-semibold'>
           {language == 'de' ? 'Produktbeschreibung' : 'Product description'}
         </h4>
 
@@ -246,12 +246,12 @@ export default function FaceCleanser() {
           <h5 className='text-center font-semibold text-pink-400'>
             FACE CLEANSER
           </h5>
-          {/* <p className=' text-stone-950 leading-snug mt-3'>
+          {/* <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'FRESH EYES SERUM besitzt einen Award Winner Wirkstoffzur gezielten sichtbaren Verjüngung der Augenpartie und Faltenreduzierung, Lifting & Straffung der Lider und Fältchen, für strahlende Augenblicke eine wertvolle natürliche Verbindung für eine nachgewiesene FALTENREDUZIERUNG'
               : 'FRESH EYES SERUM has an Award Winner active ingredient for targeted visible rejuvenation of the eye area and wrinkle reduction, lifting & tightening of the eyelids and wrinkles, for radiant moments a valuable natural connection for proven WRINKLE REDUCTION'}
           </p> */}
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'FACE CLEANSER besitzt positive Effekte auf die Haut, reduziert Rötungen und irritationen, ideal für gestresste Haut. Unterstützt die natürliche Schutzbarriere der Haut und bringt sie ins Gleichgewicht. Anti-Aging Wirkung durch die 8D 8-fache Hyaloronsäure aus extrem micro Molekülen für eine bessere Feuchtigkeitsversorgung der Haut.FACE CLEANSER verleiht der Haut ein frisches Hautgefühl, reinigt und pflegt selbst die sensible Haut, zögert die Hautalterung hinaus und sorgt für eine sichtbare gepflegte Haut.'
               : 'FACE CLEANSER has positive effects on the skin, reduces redness and irritation, ideal for stressed skin. Supports the natural protective barrier of the skin and brings it into balance. Anti-Aging effect through the 8D 8-fold hyaluronic acid from extremely micro molecules for better moisturization of the skin.FACE CLEANSER gives the skin a fresh skin feel, cleanses and cares for the sensitive skin, delays skin aging and provides a visible well-cared-for skin.'}
@@ -263,7 +263,7 @@ export default function FaceCleanser() {
             <h5 className='text-center font-semibold text-pink-400'>
               FACE CLEANSER
             </h5>
-            <p className=' text-stone-950 leading-snug '>
+            <p className=' text-clay leading-snug '>
               {language == 'de'
                 ? 'FACE CLEANSER bereitet die Gesichtshaut gründlich auf die Pflege vor, sodass nachfolgende Pflegeprodukte besser aufgenommen werden können. '
                 : 'FACE CLEANSER thoroughly prepares the skin for care, so that subsequent care products can be better absorbed.'}
@@ -277,11 +277,11 @@ export default function FaceCleanser() {
             className=' max-w-80 rounded-md'
           />
         </div>
-        <h4 className=' text-stone-800 font-semibold mt-5'>
+        <h4 className=' text-clay font-semibold mt-5'>
           {language == 'de' ? 'Anwendung' : 'Application'}
         </h4>
-        <p className=' text-stone-800'>
-          <span className='text-stone-800 font-semibold'>
+        <p className=' text-clay'>
+          <span className='text-clay font-semibold'>
             {language == 'de' ? '2 mal ' : 'Twice '}
           </span>
           {language == 'de'

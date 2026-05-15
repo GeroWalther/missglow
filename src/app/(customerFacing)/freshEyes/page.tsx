@@ -93,7 +93,7 @@ export default function FreshEyeShopSite() {
         {/* product details */}
         <div className='lg:max-w-lg lg:self-end'>
           <div className='mt-4'>
-            <h1 className='text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl'>
+            <h1 className='text-3xl font-bold tracking-tight text-clay sm:text-4xl'>
               FRESH EYES SERUM
             </h1>
             <div className='flex gap-3 mt-6 items-center'>
@@ -111,15 +111,15 @@ export default function FreshEyeShopSite() {
               <div className='flex flex-col'>
                 {isActive && (
                   <div className='flex items-center gap-2'>
-                    <p className='font-medium text-stone-600 text-lg line-through'>
+                    <p className='font-medium text-clay-soft text-lg line-through'>
                       {formatCurrency(FRESHEZESPRICE)}
                     </p>
-                    <span className='text-xs font-bold text-white bg-gradient-to-r from-orange-400 via-pink-400 to-orange-400 px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
+                    <span className='text-xs font-bold text-white bg-bloom px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
                       -{salePercentage}% {saleName}
                     </span>
                   </div>
                 )}
-                <p className='font-medium text-stone-900 text-xl'>
+                <p className='font-medium text-clay text-xl'>
                   {formatCurrency(getSalePrice(FRESHEZESPRICE, salePercentage))}
                 </p>
               </div>
@@ -139,37 +139,37 @@ export default function FreshEyeShopSite() {
 
             <div className='mt-4 space-y-6'>
               <ul className='list-disc ml-5'>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Anti Aging Aktivität'
                     : 'Anti-aging activity'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Lifting und Straffung der Lieder und Fältchen'
                     : 'Lifting and tightening of the eyelids and wrinkles'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Auch für die intensive Behandlung der Stirnfalten geeignet'
                     : 'Also suitable for the intensive treatment of forehead wrinkles'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Sichtbare Verjüngung der Augenpartie und Faltenreduzierung'
                     : 'Visible rejuvenation of the eye area and wrinkle reduction'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Wirkung in Studien bestätigt'
                     : 'Effect confirmed in studies'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Sichtbar frischer und straffer'
                     : 'Visibly fresher and firmer'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Verlangsamt die Hautalterung'
                     : 'Slows down skin aging'}
@@ -217,9 +217,9 @@ export default function FreshEyeShopSite() {
               <div className='group inline-flex text-lg text-medium'>
                 <Shield
                   aria-hidden='true'
-                  className='mr-2 h-6 w-6 flex-shrink-0 text-stone-400'
+                  className='mr-2 h-6 w-6 flex-shrink-0 text-clay-soft/70'
                 />
-                <span className=' text-sm text-muted-foreground hover:text-stone-700'>
+                <span className=' text-sm text-muted-foreground hover:text-clay'>
                   {language == 'de'
                     ? 'Kunden Service Rund um die Uhr erreichbar unter'
                     : 'Customer Service available 24/7 at '}
@@ -234,7 +234,7 @@ export default function FreshEyeShopSite() {
 
       {/* More images and Product description */}
       <div className='md:px-10 md:pb-20 pb-5'>
-        <h4 className=' text-stone-800 font-semibold'>
+        <h4 className=' text-clay font-semibold'>
           {language == 'de' ? 'Produktbeschreibung' : 'Product description'}
         </h4>
 
@@ -242,12 +242,12 @@ export default function FreshEyeShopSite() {
           <h5 className='text-center font-semibold text-blue-400'>
             FRESH EYES SERUM
           </h5>
-          {/* <p className=' text-stone-950 leading-snug mt-3'>
+          {/* <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'FRESH EYES SERUM besitzt einen Award Winner Wirkstoffzur gezielten sichtbaren Verjüngung der Augenpartie und Faltenreduzierung, Lifting & Straffung der Lider und Fältchen, für strahlende Augenblicke eine wertvolle natürliche Verbindung für eine nachgewiesene FALTENREDUZIERUNG'
               : 'FRESH EYES SERUM has an Award Winner active ingredient for targeted visible rejuvenation of the eye area and wrinkle reduction, lifting & tightening of the eyelids and wrinkles, for radiant moments a valuable natural connection for proven WRINKLE REDUCTION'}
           </p> */}
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'FRESH EYES SERUM besitzt besitzt Liftingwirkung mit einem Preisgekrönten Wirkstoff. Award Winner in seiner Wirksamkeit. 8D 8-fache Hyaloronsäure aus extrem micro Molekülen für eine bessere Feuchtigkeitsversorgung der empfindlichen Augenpartie. FRESH EYES SERUM zögert die Hautalterung hinaus und sorgt für eine sichtbare Verjüngung der Augenpartie.'
               : 'FRESH EYES SERUM has a lifting effect with an award-winning active ingredient. Award Winner in its effectiveness. 8D 8-fold hyaluronic acid from extremely micro molecules for better moisturization of the sensitive eye area. FRESH EYES SERUM delays skin aging and provides visible rejuvenation of the eye area.'}
@@ -259,7 +259,7 @@ export default function FreshEyeShopSite() {
             <h5 className='text-center font-semibold text-blue-400'>
               FRESH EYES SERUM
             </h5>
-            <p className=' text-stone-950 leading-snug '>
+            <p className=' text-clay leading-snug '>
               {language == 'de'
                 ? 'FRESH EYES SERUM besitzt einen Award Winner Wirkstoffzur gezielten sichtbaren Verjüngung der Augenpartie und Faltenreduzierung, Lifting & Straffung der Lider und Fältchen, für strahlende Augenblicke eine wertvolle natürliche Verbindung für eine nachgewiesene FALTENREDUZIERUNG'
                 : 'FRESH EYES SERUM has an Award Winner active ingredient for targeted visible rejuvenation of the eye area and wrinkle reduction, lifting & tightening of the eyelids and wrinkles, for radiant moments a valuable natural connection for proven WRINKLE REDUCTION'}
@@ -273,11 +273,11 @@ export default function FreshEyeShopSite() {
             className=' max-w-80 rounded-md'
           />
         </div>
-        <h4 className=' text-stone-800 font-semibold mt-5'>
+        <h4 className=' text-clay font-semibold mt-5'>
           {language == 'de' ? 'Anwendung' : 'Application'}
         </h4>
-        <p className=' text-stone-800'>
-          <span className='text-stone-800 font-semibold'>
+        <p className=' text-clay'>
+          <span className='text-clay font-semibold'>
             {language == 'de' ? '2 mal ' : 'Twice '}
           </span>
           {language == 'de'

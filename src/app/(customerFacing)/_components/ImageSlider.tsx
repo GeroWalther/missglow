@@ -36,7 +36,7 @@ const ImageSlider = ({ urls, alt }: ImageSliderProps) => {
 
   const activeStyles =
     'active:scale-[0.97] grid opacity-100 hover:scale-105 absolute top-1/2 -translate-y-1/2 aspect-square h-8 w-8 z-50 place-items-center rounded-full border-2 bg-white border-stone-300';
-  const inactiveStyles = ' text-stone-400';
+  const inactiveStyles = ' text-clay-soft/70';
 
   return (
     <div className='group relative bg-stone-100 aspect-square overflow-hidden rounded-xl'>
@@ -54,7 +54,7 @@ const ImageSlider = ({ urls, alt }: ImageSliderProps) => {
                   !slideConfig.isEnd,
               })}
               aria-label='next image'>
-              <ChevronRight className='h-4 w-4 text-stone-700' />{' '}
+              <ChevronRight className='h-4 w-4 text-clay' />{' '}
             </button>
           )}
           {activeIndex !== 0 && (
@@ -69,7 +69,7 @@ const ImageSlider = ({ urls, alt }: ImageSliderProps) => {
                   !slideConfig.isBeginning,
               })}
               aria-label='previous image'>
-              <ChevronLeft className='h-4 w-4 text-stone-700' />
+              <ChevronLeft className='h-4 w-4 text-clay' />
             </button>
           )}
         </div>

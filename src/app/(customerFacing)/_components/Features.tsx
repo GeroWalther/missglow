@@ -2,61 +2,94 @@
 import { useLanguage } from '@/contexts/LanguageProvider';
 import { Gem, InfinityIcon, LeafIcon, Rabbit } from 'lucide-react';
 import React from 'react';
+import Reveal from '@/components/ui/Reveal';
 
 const FeaturesSection = () => {
   const { language } = useLanguage();
+  const isDE = language === 'de';
+
   const features = [
     {
-      icon: Rabbit,
-      title: language == 'de' ? 'Ohne Tierversuche' : 'No animal testing.',
-      text:
-        language == 'de'
-          ? 'Unsere Produkte werden ohne Tierversuche entwickelt und hergestellt.'
-          : 'Our products are developed and manufactured without animal testing.',
+      Icon: Rabbit,
+      title: isDE ? 'Ohne Tierversuche' : 'Cruelty-free',
+      text: isDE
+        ? 'Entwickelt und hergestellt — niemals an Tieren getestet.'
+        : 'Developed and made — never tested on animals.',
     },
     {
-      icon: LeafIcon,
-      title: language == 'de' ? 'Natürlich' : 'Natural',
-      text:
-        language == 'de'
-          ? 'Wir verwenden nur natürliche Inhaltsstoffe in unseren Produkten.'
-          : 'We use only natural ingredients in our products.',
+      Icon: LeafIcon,
+      title: isDE ? 'Natürlich' : 'Naturally formulated',
+      text: isDE
+        ? 'Wir verwenden bewusst natürliche Inhaltsstoffe in unseren Rezepturen.'
+        : 'We intentionally use natural ingredients in our formulations.',
     },
     {
-      icon: Gem,
-      title: language == 'de' ? 'Hip und modern' : 'Trendy and modern',
-      text:
-        language == 'de'
-          ? 'Unsere Produkte sind trendy und entsprechen den neuesten Beauty-Trends.'
-          : 'Our products are trendy and align with the latest beauty trends.',
+      Icon: Gem,
+      title: isDE ? 'Modern & wirksam' : 'Modern & effective',
+      text: isDE
+        ? 'Aktivwirkstoff-Kosmetik im Einklang mit aktuellen Beauty-Trends.'
+        : 'Active-ingredient cosmetics in tune with current beauty trends.',
     },
     {
-      icon: InfinityIcon,
-      title: language == 'de' ? 'Super Ergebnisse' : 'Amazing results',
-      text:
-        language == 'de'
-          ? 'Unsere Kunden sind mit den Ergebnissen unserer Produkte sehr zufrieden.'
-          : 'Our customers are very satisfied with the results of our products.',
+      Icon: InfinityIcon,
+      title: isDE ? 'Sichtbare Ergebnisse' : 'Visible results',
+      text: isDE
+        ? 'Unsere Kundinnen lieben die langanhaltenden Effekte.'
+        : 'Our customers love the long-lasting effects.',
     },
   ];
 
   return (
-    <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-4 p-8 border border-t'>
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          className='text-center p-6 bg-white rounded-lg shadow-lg'>
-          {feature.icon === Rabbit && <Rabbit />}
-          {feature.icon === LeafIcon && <LeafIcon />}
-          {feature.icon === InfinityIcon && <InfinityIcon />}
-          {feature.icon === Gem && <Gem />}
-          <p className='text-xl font-semibold mb-2 text-stone-700'>
-            {feature.title}
+    <section className='py-24 md:py-32 surface-champagne border-y border-clay/5'>
+      <div className='container-page'>
+        <Reveal className='max-w-2xl mb-16 md:mb-20'>
+          <p className='eyebrow mb-5'>
+            {isDE ? 'Unsere Werte' : 'Our principles'}
           </p>
-          <p className='text-gray-700'>{feature.text}</p>
+          <h2 className='display-sm text-clay text-balance'>
+            {isDE ? (
+              <>
+                Eine Beauty-Routine,{' '}
+                <em className='italic text-bloom font-light'>
+                  auf die du dich verlassen kannst
+                </em>
+                .
+              </>
+            ) : (
+              <>
+                A beauty routine{' '}
+                <em className='italic text-bloom font-light'>
+                  you can rely on
+                </em>
+                .
+              </>
+            )}
+          </h2>
+        </Reveal>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-clay/10 rounded-[1.5rem] overflow-hidden border border-clay/10'>
+          {features.map(({ Icon, title, text }, i) => (
+            <Reveal
+              key={title}
+              delay={i * 0.07}
+              className='bg-background p-8 md:p-10 flex flex-col gap-5 group transition-colors duration-500 hover:bg-petal-soft'>
+              <div className='flex items-center justify-between'>
+                <span className='inline-flex h-12 w-12 items-center justify-center rounded-full bg-bloom/10 text-bloom transition-colors duration-500 group-hover:bg-bloom group-hover:text-champagne'>
+                  <Icon className='h-5 w-5' />
+                </span>
+                <span className='font-mono text-xs text-clay-soft/60'>
+                  0{i + 1}
+                </span>
+              </div>
+              <h3 className='font-display text-xl md:text-2xl text-clay leading-tight'>
+                {title}
+              </h3>
+              <p className='text-sm text-clay-soft leading-relaxed'>{text}</p>
+            </Reveal>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
   );
 };
 

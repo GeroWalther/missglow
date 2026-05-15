@@ -52,12 +52,9 @@ export default function Cart() {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger className='group -m-2 flex items-center p-2'>
-        <ShoppingCart
-          aria-hidden='true'
-          className='h-6 w-6 flex-shrink-0 text-stone-100 group-hover:text-orange-200'
-        />
-        <span className='ml-2 text-sm font-medium text-orange-100 group-hover:text-orang-200'>
+      <SheetTrigger className='group -m-2 flex items-center gap-2 p-2 text-clay hover:text-bloom transition-colors duration-300'>
+        <ShoppingCart aria-hidden='true' className='h-5 w-5 flex-shrink-0' />
+        <span className='font-mono text-[0.7rem] uppercase tracking-[0.18em] font-medium'>
           {isMounted ? itemCount : 0}
         </span>
       </SheetTrigger>
@@ -91,11 +88,11 @@ export default function Cart() {
                 {discount > 0 && (
                   <>
                     <div className='flex'>
-                      <span className='flex-1 font-bold text-pink-700'>
+                      <span className='flex-1 font-bold text-bloom'>
                         {language == 'de' && 'Rabatt'}
                         {language == 'en' && 'Discount'}
                       </span>
-                      <span className='font-bold text-pink-700'>
+                      <span className='font-bold text-bloom'>
                         - {discount} %
                       </span>
                     </div>
@@ -147,7 +144,7 @@ export default function Cart() {
                 className={buttonVariants({
                   variant: 'link',
                   size: 'sm',
-                  className: 'text-sm text-muted-foreground text-stone-600',
+                  className: 'text-sm text-muted-foreground text-clay-soft',
                 })}>
                 {language == 'de' && 'Füge Produkte hinzu.'}
                 {language == 'en' && 'Add products to cart.'}

@@ -38,18 +38,18 @@ export default function CheckoutForm() {
         <DialogTrigger asChild>
           <Button
             className={buttonVariants({
-              className: 'w-full bg-pink-500',
+              className: 'w-full bg-bloom',
             })}>
             {language == 'en' ? 'Checkout' : 'Zur Kasse'}
           </Button>
         </DialogTrigger>
         <DialogContent className='w-full overflow-y-scroll max-h-screen'>
           <DialogHeader>
-            <DialogTitle className='font-bold text-stone-800'>
+            <DialogTitle className='font-bold text-clay'>
               {language == 'en' ? 'Checkout' : 'Kasse'}
             </DialogTitle>
           </DialogHeader>
-          <DialogDescription className='font-semibold text-stone-700'>
+          <DialogDescription className='font-semibold text-clay'>
             {language == 'en' ? 'Submitting an order' : ' Bestellformular'}{' '}
             <br />
             <span className='font-semibold text-muted-foreground'>
@@ -71,8 +71,8 @@ export default function CheckoutForm() {
       </DrawerTrigger>
       <DrawerContent className='w-full max-h-screen'>
         <DrawerHeader className='text-left pt-0'>
-          <DrawerTitle className='font-bold text-stone-800'>Kasse</DrawerTitle>
-          <DrawerDescription className='font-semibold text-stone-700'>
+          <DrawerTitle className='font-bold text-clay'>Kasse</DrawerTitle>
+          <DrawerDescription className='font-semibold text-clay'>
             Bestellformular <br />
             <span className='font-semibold text-muted-foreground'>
               Gib deine Addressen und Zahlungsinformationen an um zu bestellen.

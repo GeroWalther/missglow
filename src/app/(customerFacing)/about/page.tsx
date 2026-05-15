@@ -92,7 +92,7 @@ export default function AboutPage() {
                   ? 'Getreu dem Motto:'
                   : 'True to the motto:'}
               </p>
-              <p className='text-2xl font-bold text-pink-600 italic'>
+              <p className='text-2xl font-bold text-bloom italic'>
                 &quot;Age doesn&apos;t matter.&quot;
               </p>
               

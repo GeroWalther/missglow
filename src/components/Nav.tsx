@@ -3,7 +3,6 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { ComponentProps } from 'react';
-import { useMediaQuery } from 'usehooks-ts';
 
 export default function Nav({
   children,
@@ -14,9 +13,12 @@ export default function Nav({
 }) {
   return (
     <nav
-      className={`text-primary-foreground md:flex justify-center px-4 gap-6 p-2 ${
-        admin ? 'bg-primary flex' : 'bg-transparent hidden'
-      }`}>
+      className={cn(
+        'text-clay justify-center items-center px-4 gap-7 py-2',
+        admin
+          ? 'bg-primary flex text-primary-foreground'
+          : 'bg-transparent hidden md:flex'
+      )}>
       {children}
     </nav>
   );
@@ -24,12 +26,14 @@ export default function Nav({
 
 export function NavLink(props: Omit<ComponentProps<typeof Link>, 'className'>) {
   const pathname = usePathname();
+  const isActive = pathname === props.href;
   return (
     <Link
       {...props}
+      data-active={isActive}
       className={cn(
-        ' p-1 rounded-md hover:bg-pink-200 text-xs font-semibold hover:text-pink-800 focus-visible:bg-pink-200  focus-visible:text-pink-800 ',
-        pathname === props.href ? 'bg-pink-200 text-pink-800' : ''
+        'link-underline text-[0.72rem] uppercase tracking-[0.18em] font-medium transition-colors duration-300',
+        isActive ? 'text-bloom' : 'text-clay hover:text-bloom'
       )}
     />
   );

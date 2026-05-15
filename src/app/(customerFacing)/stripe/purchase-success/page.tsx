@@ -86,8 +86,8 @@ export default async function SuccessPage({
         />
       </div>
       <div>
-        <h2 className='text-2xl max-w-prose text-stone-900 font-light mb-4 md:mb-10 mx-20'>
-          <span className='font-bold text-pink-500'>The Glow Look!</span>
+        <h2 className='text-2xl max-w-prose text-clay font-light mb-4 md:mb-10 mx-20'>
+          <span className='font-bold text-bloom'>The Glow Look!</span>
         </h2>
         <ProductDisplay />
       </div>

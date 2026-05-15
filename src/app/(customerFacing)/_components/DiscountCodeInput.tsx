@@ -74,7 +74,7 @@ export default function DiscountCodeInput() {
         </p>
       )}
       {code == '1' && message && (
-        <p className='text-pink-600'>
+        <p className='text-bloom'>
           {language == 'en' ? message : 'Rabattcode ist abgelaufen.'}
         </p>
       )}

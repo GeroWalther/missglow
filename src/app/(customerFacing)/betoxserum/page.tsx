@@ -93,7 +93,7 @@ export default function BetoxSerum() {
         {/* product details */}
         <div className='lg:max-w-lg lg:self-end'>
           <div className='mt-4'>
-            <h1 className='text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl'>
+            <h1 className='text-3xl font-bold tracking-tight text-clay sm:text-4xl'>
               BETOX SERUM
             </h1>
             <div className='flex gap-3 mt-6 items-center'>
@@ -111,15 +111,15 @@ export default function BetoxSerum() {
               <div className='flex flex-col'>
                 {isActive && (
                   <div className='flex items-center gap-2'>
-                    <p className='font-medium text-stone-600 text-lg line-through'>
+                    <p className='font-medium text-clay-soft text-lg line-through'>
                       {formatCurrency(BETOXPRICE)}
                     </p>
-                    <span className='text-xs font-bold text-white bg-gradient-to-r from-orange-400 via-pink-400 to-orange-400 px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
+                    <span className='text-xs font-bold text-white bg-bloom px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
                       -{salePercentage}% {saleName}
                     </span>
                   </div>
                 )}
-                <p className='font-medium text-stone-900 text-xl'>
+                <p className='font-medium text-clay text-xl'>
                   {formatCurrency(getSalePrice(BETOXPRICE, salePercentage))}
                 </p>
               </div>
@@ -139,27 +139,27 @@ export default function BetoxSerum() {
 
             <div className='mt-4 space-y-6'>
               <ul className='list-disc ml-5'>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Sichtbarer Soforteffekt Bereits etwa 10 Minuten nach dem Auftragen kann man eine deutliche Glättung, besonders um die Augenpartie und Stirn, wahrnehmen'
                     : 'Visible instant effect: around 10 minutes after application you can notice a clear smoothing, especially around the eye area and forehead.'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Das B-Tox Serum ist eine intensive Anti-Aging-Pflege, die speziell entwickelt wurde, um mimische Falten, also Linien, die durch wiederholte Muskelbewegungen entstehen (z. B. Stirnrunzeln oder Lachen) sichtbar zu reduzieren.'
                     : 'B-Tox Serum is an intensive anti-aging treatment developed to visibly reduce expression lines that are formed by repeated muscle movements (e.g., frowning or laughing).'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Glättung durch biomimetische Peptide'
                     : 'Smoothing through biomimetic peptides.'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Das Serum enthält sogenannte biomimetische Peptide. Diese sind winzige, hautaktive Eiweißbausteine, die den natürlichen Wirkmechanismus von Botulinumtoxin (Botox) nachahmen – jedoch ohne Injektion. Sie wirken, indem sie die Mikrokontraktionen der Gesichtsmuskulatur leicht entspannen. Dadurch werden feine Linien und Falten optisch geglättet, und die Haut wirkt entspannter und ebenmäßiger.'
                     : 'The serum uses biomimetic peptides—tiny, skin-active protein fragments that replicate the natural mechanism of botulinum toxin without injections. They gently relax micro-contractions in facial muscles, softening fine lines and giving the complexion a calmer, more even look.'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Intensive Feuchtigkeitsversorgung & Elastizität Zusätzlich enthält das Serum Feuchtigkeitsspender wie 8D Hyaluronsäure, die tief in die Haut eindringen. Diese Wirkstoffe binden Wasser in den Hautschichten, was sie praller, glatter und elastischer macht. Das Ergebnis: ein frischer, aufgepolsterter Teint und eine verbesserte Hautstruktur.'
                     : 'Intensive hydration and elasticity: the serum delivers moisturizers such as 8D hyaluronic acid that penetrate deeply, bind water within the skin layers, and leave the complexion plumper, smoother, and more elastic for a refreshed, refined texture.'}
@@ -207,9 +207,9 @@ export default function BetoxSerum() {
               <div className='group inline-flex text-lg text-medium'>
                 <Shield
                   aria-hidden='true'
-                  className='mr-2 h-6 w-6 flex-shrink-0 text-stone-400'
+                  className='mr-2 h-6 w-6 flex-shrink-0 text-clay-soft/70'
                 />
-                <span className=' text-sm text-muted-foreground hover:text-stone-700'>
+                <span className=' text-sm text-muted-foreground hover:text-clay'>
                   {language == 'de'
                     ? 'Kunden Service Rund um die Uhr erreichbar unter'
                     : 'Customer Service available 24/7 at '}
@@ -224,7 +224,7 @@ export default function BetoxSerum() {
 
       {/* More images and Product description */}
       <div className='md:px-10 md:pb-20 pb-5'>
-        <h4 className=' text-stone-800 font-semibold'>
+        <h4 className=' text-clay font-semibold'>
           {language == 'de' ? 'Produktbeschreibung' : 'Product description'}
         </h4>
 
@@ -232,7 +232,7 @@ export default function BetoxSerum() {
           <h5 className='text-center font-semibold text-pink-400'>
             BETOX SERUM
           </h5>
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'Viele Frauen möchten jünger aussehen, aber ohne chemische Produkte oder Operationen. BeTOX EYE LIFT Serum bietet Ihnen alles in einem Produkt: ein natürliches Peptid, das die gleiche molekulare Struktur wie Botox hat, aber mit viel mehr Sicherheit. Entwickelt in Zusammenarbeit mit Experten der Neurowissenschaften. Es ist der erste kosmetische Wirkstoff, der innerhalb von 10 Minuten wirkt. Sichtbar glatter und nachhaltig verjüngt in nur 10 Minuten. BETOX Serum wirkt sofort mit nachgewiesener Wirksamkeit. Die Wirkung der preisgekrönten Wirkstoffe wurde in Studien bestätigt. Dies liegt daran, dass in diesem hochwirksamen BeTOX EYE LIFT Serum ein Wirkstoff enthalten ist, der die Muskelkontraktion stimuliert. BETOX Serum entspannt die Muskelkontraktion und ist eine sichere und natürliche Alternative. BETOX Serum reduziert Falten innerhalb eines Monats um 64 %, zusätzlich zu dieser Wirkung kommt eine 120-stündige tiefe Feuchtigkeit der Haut hinzu. Entspannen Sie die Mimikfalten und Fältchen um Mund, Nase, Augen, Stirn und Braue.'
               : 'Many women want to look younger, but without chemical products or operations. BeTOX EYE LIFT Serum offers you everything in one product: a natural peptide that has the same molecular structure as Botox, but with much greater safety. Developed in collaboration with neuroscience experts. It is the first cosmetic active ingredient that works within 10 minutes. Visibly smoother and sustainably rejuvenated in just 10 minutes. BETOX Serum acts immediately with proven effectiveness. The effect of the award-winning ingredients has been confirmed in studies. This is because this highly effective BeTOX EYE LIFT Serum contains an ingredient that stimulates muscle contraction. BETOX Serum relaxes muscle contraction and is a safe and natural alternative. BETOX Serum reduces wrinkles within a month by 64%, and in addition, provides a 120-hour effect of deep skin hydration. Relax mimic wrinkles and fine lines around the mouth, nose, eyes, forehead, and brow.'}
@@ -242,7 +242,7 @@ export default function BetoxSerum() {
               <h5 className='text-center font-semibold text-pink-400 mb-5'>
                 BETOX SERUM
               </h5>
-              <div className='text-stone-950 leading-snug space-y-4'>
+              <div className='text-clay leading-snug space-y-4'>
                 {language == 'de' ? (
                   <>
                     <p>
@@ -303,19 +303,19 @@ export default function BetoxSerum() {
             />
           </div>
         </div>
-        <h4 className=' text-stone-800 font-semibold mt-5'>
+        <h4 className=' text-clay font-semibold mt-5'>
           {language == 'de' ? 'Anwendung' : 'Application'}
         </h4>
-        <p className=' text-stone-800'>
-          <span className='text-stone-800 font-semibold'>
+        <p className=' text-clay'>
+          <span className='text-clay font-semibold'>
             {language == 'de' ? '2 mal ' : 'Twice '}
           </span>
           {language == 'de'
             ? 'Für optimale Ergebnisse jeden Morgen nach der Reinigung auf Stirn und Augenpartie einmassieren Empfehlung: Täglich anwenden, um das beste Ergebnis zu erzielen und Falten nach 1 Monat um bis zu 64 % zu reduzieren.'
             : 'For optimal results, massage onto forehead and eye area after cleansing daily. Recommendation: Daily application to achieve the best result and reduce wrinkles by up to 64% in 1 month.'}
         </p>
-        <p className='text-stone-800 font-semibold mt-10'>HERO INGREDIENTS </p>
-        <p className='text-stone-800 font-semibold'>BIO-aktiver Wirkstoff</p>
+        <p className='text-clay font-semibold mt-10'>HERO INGREDIENTS </p>
+        <p className='text-clay font-semibold'>BIO-aktiver Wirkstoff</p>
         <ul>
           <li>Natürliches Protein</li>
           <li>Aloe Vera</li>

@@ -93,7 +93,7 @@ export default function MagicElixir() {
         {/* product details */}
         <div className='lg:max-w-lg lg:self-end'>
           <div className='mt-4'>
-            <h1 className='text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl'>
+            <h1 className='text-3xl font-bold tracking-tight text-clay sm:text-4xl'>
               MAGIC ELIXIR
             </h1>
             <div className='flex gap-3 mt-6 items-center'>
@@ -111,15 +111,15 @@ export default function MagicElixir() {
               <div className='flex flex-col'>
                 {isActive && (
                   <div className='flex items-center gap-2'>
-                    <p className='font-medium text-stone-600 text-lg line-through'>
+                    <p className='font-medium text-clay-soft text-lg line-through'>
                       {formatCurrency(MAGICELIXIRPRICE)}
                     </p>
-                    <span className='text-xs font-bold text-white bg-gradient-to-r from-orange-400 via-pink-400 to-orange-400 px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
+                    <span className='text-xs font-bold text-white bg-bloom px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
                       -{salePercentage}% {saleName}
                     </span>
                   </div>
                 )}
-                <p className='font-medium text-stone-900 text-xl'>
+                <p className='font-medium text-clay text-xl'>
                   {formatCurrency(getSalePrice(MAGICELIXIRPRICE, salePercentage))}
                 </p>
               </div>
@@ -138,32 +138,32 @@ export default function MagicElixir() {
             </div>
             <div className='mt-4 space-y-6'>
               <ul className='list-disc ml-5'>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'MAGIC ELIXIR steigert die Anziehungskraft der Frau um ein vielfaches'
                     : 'MAGIC ELIXIR increases the attractiveness of the woman by a multiple'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Fördert das Selbstbewusstsein der Frau'
                     : 'Fosters the self-confidence of the woman'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Erhöht die Attraktivität'
                     : 'Increases the attractiveness'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Kann das Begehren wecken nach der Frau die MAGIC ELIXIR benutzt'
                     : 'MAGIC ELIXIR increases the attractiveness of the woman by a multiple'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'Wirkung in Studien bestätigt'
                     : 'Effect confirmed in studies'}
                 </li>
-                <li className='text-lg ttext-stone-800'>
+                <li className='text-lg ttext-clay'>
                   {language == 'de'
                     ? 'MAGIC ELIXIR ist Dein unsichtbarer Begleiter hinterlasse einen bleibenden Eindruck'
                     : 'MAGIC ELIXIR is your invisible companion, leave a lasting impression'}
@@ -214,9 +214,9 @@ export default function MagicElixir() {
               <div className='group inline-flex text-lg text-medium'>
                 <Shield
                   aria-hidden='true'
-                  className='mr-2 h-6 w-6 flex-shrink-0 text-stone-400'
+                  className='mr-2 h-6 w-6 flex-shrink-0 text-clay-soft/70'
                 />
-                <span className=' text-sm text-muted-foreground hover:text-stone-700'>
+                <span className=' text-sm text-muted-foreground hover:text-clay'>
                   {language == 'de'
                     ? 'Kunden Service Rund um die Uhr erreichbar unter'
                     : 'Customer Service available 24/7 at '}
@@ -231,7 +231,7 @@ export default function MagicElixir() {
 
       {/* More images and Product description */}
       <div className='md:px-10 md:pb-20 pb-5'>
-        <h4 className=' text-stone-800 font-semibold'>
+        <h4 className=' text-clay font-semibold'>
           {language == 'de' ? 'Produktbeschreibung' : 'Product description'}
         </h4>
 
@@ -239,12 +239,12 @@ export default function MagicElixir() {
           <h5 className='text-center font-semibold text-pink-400'>
             MAGIC ELIXIR
           </h5>
-          {/* <p className=' text-stone-950 leading-snug mt-3'>
+          {/* <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'FRESH EYES SERUM besitzt einen Award Winner Wirkstoffzur gezielten sichtbaren Verjüngung der Augenpartie und Faltenreduzierung, Lifting & Straffung der Lider und Fältchen, für strahlende Augenblicke eine wertvolle natürliche Verbindung für eine nachgewiesene FALTENREDUZIERUNG'
               : 'FRESH EYES SERUM has an Award Winner active ingredient for targeted visible rejuvenation of the eye area and wrinkle reduction, lifting & tightening of the eyelids and wrinkles, for radiant moments a valuable natural connection for proven WRINKLE REDUCTION'}
           </p> */}
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'MAGIC ELIXIR Steigert die Anziehungskraft der Frau, MAGIC ELIXIR wurde speziell entwickelt, um die natürliche Anziehungskraft der Frau zu steigern, die Frau wirkt Selbstbewusst und anziehend auf ihr Umfeld, MAGIC ELIXIR kann dich unwiderstehlich machen und das Wohlbefinden fördern, sorgt für eine unglaubliche Attraktivität die vom Umfeld wahr genommen wird und die Aufmerksamkeit auf Dich zieht.'
               : 'MAGIC ELIXIR increases the attractiveness of the woman, MAGIC ELIXIR was specifically developed to increase the natural attractiveness of the woman, the woman is self-confident and attractive to her environment, MAGIC ELIXIR can make you irresistible and promote well-being, it provides an incredible attractiveness that is appreciated by the environment and attracts attention to you.'}
@@ -256,7 +256,7 @@ export default function MagicElixir() {
             <h5 className='text-center font-semibold text-pink-400'>
               MAGIC ELIXIR
             </h5>
-            <p className=' text-stone-950 leading-snug '>
+            <p className=' text-clay leading-snug '>
               {language == 'de'
                 ? 'MAGIC ELIXIR ist Dein Geheimnis für unwiderstehliche Anziehungskraft, steigert um ein vielfaches Deine Anziehung, aber eines der wichtigsten emotionalen Bedürfnisse ist es, das andere Geschlecht ( die Person, die Dich interessiert) anzuziehen, begehrt zu werden und attraktiv wahrgenommen zu werden. '
                 : ''}
@@ -270,11 +270,11 @@ export default function MagicElixir() {
             className=' max-w-80 rounded-md'
           />
         </div>
-        <h4 className=' text-stone-800 font-semibold mt-5'>
+        <h4 className=' text-clay font-semibold mt-5'>
           {language == 'de' ? 'Anwendung' : 'Application'}
         </h4>
-        <p className=' text-stone-800'>
-          <span className='text-stone-800 font-semibold'>
+        <p className=' text-clay'>
+          <span className='text-clay font-semibold'>
             {language == 'de' ? '2 mal ' : 'Twice '}
           </span>
           {language == 'de'

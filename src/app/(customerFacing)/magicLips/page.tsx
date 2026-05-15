@@ -92,7 +92,7 @@ export default function MagicLipsShopSite() {
       <div className='mx-auto max-w-2xl px-4 py-8 sm:px-6 -mt-10 md:mt-0 lg:grid lg:grid-cols-2 lg:max-w-7xl lg:gap-x-8 lg:px-8'>
         <div className='lg:max-w-lg lg:self-end'>
           <div className='mt-4'>
-            <h1 className='text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl'>
+            <h1 className='text-3xl font-bold tracking-tight text-clay sm:text-4xl'>
               MAGIC LIPS SERUM
             </h1>
             <div className='flex gap-3 mt-6 items-center'>
@@ -110,15 +110,15 @@ export default function MagicLipsShopSite() {
               <div className='flex flex-col'>
                 {isActive && (
                   <div className='flex items-center gap-2'>
-                    <p className='font-medium text-stone-600 text-lg line-through'>
+                    <p className='font-medium text-clay-soft text-lg line-through'>
                       {formatCurrency(MAGICLIPSPRICE)}
                     </p>
-                    <span className='text-xs font-bold text-white bg-gradient-to-r from-orange-400 via-pink-400 to-orange-400 px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
+                    <span className='text-xs font-bold text-white bg-bloom px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
                       -{salePercentage}% {saleName}
                     </span>
                   </div>
                 )}
-                <p className='font-medium text-stone-900 text-xl'>
+                <p className='font-medium text-clay text-xl'>
                   {formatCurrency(getSalePrice(MAGICLIPSPRICE, salePercentage))}
                 </p>
               </div>
@@ -138,27 +138,27 @@ export default function MagicLipsShopSite() {
 
             <div className='mt-4 space-y-6'>
               <ul className='list-disc ml-5'>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de'
                     ? '78% Aufpolsternde Wirkung auf die Lippen'
                     : '78% Plumping effect on the lips'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de'
                     ? 'Nach nur 1 Anwendung sofort sichtbar volle Lippen'
                     : 'Visible full lips after just 1 application'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de'
                     ? 'Verleiht der Lippenpartie ein volles und definiertes Aussehen'
                     : 'Gives the lip area a full and defined appearance'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de'
                     ? 'Reduziert Rillen und Lippenfältchen'
                     : 'Reduces lip lines and wrinkles'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de'
                     ? 'Eine verbesserte Definition der Lippen, ebenfalls wird das natürliche Lippenrot'
                     : 'Improved definition of the lips, also enhances the natural lip color'}
@@ -206,9 +206,9 @@ export default function MagicLipsShopSite() {
               <div className='group inline-flex text-lg text-medium'>
                 <Shield
                   aria-hidden='true'
-                  className='mr-2 h-6 w-6 flex-shrink-0 text-stone-400'
+                  className='mr-2 h-6 w-6 flex-shrink-0 text-clay-soft/70'
                 />
-                <span className=' text-sm text-muted-foreground hover:text-stone-700'>
+                <span className=' text-sm text-muted-foreground hover:text-clay'>
                   {language == 'de'
                     ? 'Kunden Service Rund um die Uhr erreichbar unter'
                     : 'Customer Service available 24/7 at '}
@@ -223,7 +223,7 @@ export default function MagicLipsShopSite() {
 
       {/*Product description */}
       <div className='md:px-10 md:pb-20 pb-5'>
-        <h4 className=' text-stone-800 font-semibold mb-6'>
+        <h4 className=' text-clay font-semibold mb-6'>
           {language == 'de' ? 'Produktbeschreibung' : 'Product description'}
         </h4>
         <div className='flex-col justify-between items-center gap-10 md:grid md:grid-cols-2'>
@@ -231,7 +231,7 @@ export default function MagicLipsShopSite() {
             <h5 className='text-center font-semibold'>
               In einer In-Vivo STUDIE:
             </h5>
-            <p className=' text-stone-950 leading-snug'>
+            <p className=' text-clay leading-snug'>
               {language == 'de'
                 ? 'Stellten die Probanden nach 29 tägiger Anwendung eine dramatischeVerbesserung der Lippenfülle bis zu 78% und der Lippenfeuchtigkeit fest.Die Pliseefältchen haben sich um 40% reduziert, die Lippenfeuchtigkeitund Lippenvolumen um bis zu 78% erhöht, die Lippenkontur hat sich verbessert, ebenfalls die Lippenlinie hat eine bessere Definition erhalten.'
                 : 'After 29 days of use, the subjects noticed a dramatic improvement in lip fullness of up to 78% and lip moisture. The pleated wrinkles have been reduced by 40%, lip moisture and lip volume have increased by up to 78%, the lip contour has improved, and the lip line has received better definition.'}
@@ -245,10 +245,10 @@ export default function MagicLipsShopSite() {
             className=' max-w-80 md:-mt-10'
           />
         </div>
-        <h4 className=' text-stone-800 font-semibold mt-5'>
+        <h4 className=' text-clay font-semibold mt-5'>
           {language == 'de' ? 'Anwendung' : 'Application'}
         </h4>
-        <p className=' text-stone-800'>
+        <p className=' text-clay'>
           {language == 'de'
             ? ' kann täglich auf Lippen und Mundregion aufgetragen werden, das tägliche benutzen lässt das Lippenvolumen bis zu 78% aufpolstern.'
             : ' can be applied daily to lips and mouth area, daily use plumps the lip volume up to 78%.'}
@@ -264,13 +264,13 @@ export default function MagicLipsShopSite() {
 
         <div className='mt-16 px-3 pb-10'>
           <h5 className='font-semibold'>Was ist MAGIC LIPS SERUM ?</h5>
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             MAGIC LIPS SERUM
             {language == 'de'
               ? ' besitzt ein hochaktives OLIGOpeptid, das speziell für die Mund und Lippenpartie entwickelt wurde, die Protein- und Proteoglyjansynthese aktiviert und so die Dichte des Bindegewebes erhöht.'
               : ' has a highly active OLIGO peptide that was specially developed for the mouth and lip area, activates protein and proteoglycan synthesis, thus increasing the density of the connective tissue.'}
           </p>
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'MAGIC LIPS SERUM spendet den Lippen Feuchtigkeit und stellt Glykosaminoglykane und Kollagen wieder. '
               : 'MAGIC LIPS SERUM moisturizes the lips and restores glycosaminoglycans and collagen.'}
@@ -280,44 +280,44 @@ export default function MagicLipsShopSite() {
                 : 'increases lip moisture and gives youthful lip volume up to 78%.'}
             </span>
           </p>
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             MAGIC LIPS SERUM
             {language == 'de'
               ? ' verbessert die Lippenkontur und verleiht der Lippenlinie eine bessere Definition.'
               : ' improves the lip contour and gives the lip line a better definition.'}
           </p>
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             MAGIC LIPS SERUM
             {language == 'de'
               ? ' strafft und definiert die Lippenkonturen spürbar, spendet Feuchtigkeit und restrukturiert die Lippen.'
               : ' visibly tightens and defines the lip contours, moisturizes and restructures the lips.'}
           </p>
-          <p className=' text-stone-950 leading-snug font-semibold mt-3'>
+          <p className=' text-clay leading-snug font-semibold mt-3'>
             {language == 'de'
               ? ' Diese ANTI-AGING Behandlung der LIPPEN ist Cosmezeutisch und basiert auf einem Botenpeptid, das Glykosaminoglkane und Kollagen wiederherstellt.'
               : ' This ANTI-AGING treatment of the LIPS is Cosmeceutical and is based on a messenger peptide that restores glycosaminoglycans and collagen.'}
           </p>
           <div className='md:ml-20 ml-10 mt-12'>
-            <span className='font-bold text-pink-800 '>
+            <span className='font-bold text-bloom-deep '>
               {language == 'de'
                 ? 'SOFORT SICHTBARE WIRKSAMKEIT'
                 : 'INSTANTLY VISIBLE EFFECTIVENESS'}
             </span>
           </div>
           <div className='mt-10'>
-            <span className='font-bold text-pink-800 '>
+            <span className='font-bold text-bloom-deep '>
               {language == 'de'
                 ? 'MAGIC LIPS SERUM führt zu einer Verbesserung von Aussehen, Definition und Farbe der Lippen. Erhöht das Lippen Volumen bis zu 78%'
                 : 'MAGIC LIPS SERUM leads to an improvement in the appearance, definition and color of the lips. Increases lip volume up to 78%'}
             </span>
           </div>
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? ' besitzt einen ANTI-AGING Wirkstoff Centella Asiatica die beste wissenschaftlich erforschte Heilpflanze, ist das non-plus-ultra im Kampf gegen die Hautalterung, eine ausgezeichnete Minderung von Falten im Mund-Lippenbereich besitzen OLIGO-Aminosäuren, leistungsstarke Wirkstoffe, zur VERJÜNGUNG der Mundpartie und die Lippen deutlich voller bis zu 78%. voluminöser und faltenfreier in Szene setzten.'
               : ' has an ANTI-AGING active ingredient Centella Asiatica the best scientifically researched medicinal plant, is the non-plus-ultra in the fight against skin aging, have an excellent reduction of wrinkles in the mouth-lip area OLIGO amino acids, powerful active ingredients, for rejuvenation of the mouth area and the lips significantly fuller up to 78%. more voluminous and wrinkle-free in the scene.'}
           </p>
           <div className='mt-5'>
-            <span className='font-bold text-pink-800 '>
+            <span className='font-bold text-bloom-deep '>
               {language == 'de'
                 ? 'Wohlgeformte bis zu 78% mehr Lippenvolumen, weiche sinnliche Lippen ohne Rillen und Fältchen.'
                 : 'Well-shaped up to 78% more lip volume, soft sensual lips without grooves and wrinkles.'}

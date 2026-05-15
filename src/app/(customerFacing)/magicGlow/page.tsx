@@ -93,7 +93,7 @@ export default function MagicGlowShopSite() {
         {/* product details */}
         <div className='lg:max-w-lg lg:self-end'>
           <div className='mt-4'>
-            <h1 className='text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl'>
+            <h1 className='text-3xl font-bold tracking-tight text-clay sm:text-4xl'>
               MAGIC GLOW CREME
             </h1>
             <div className='flex gap-3 mt-6 items-center'>
@@ -111,15 +111,15 @@ export default function MagicGlowShopSite() {
               <div className='flex flex-col'>
                 {isActive && (
                   <div className='flex items-center gap-2'>
-                    <p className='font-medium text-stone-600 text-lg line-through'>
+                    <p className='font-medium text-clay-soft text-lg line-through'>
                       {formatCurrency(PRICEMAGICGLOW)}
                     </p>
-                    <span className='text-xs font-bold text-white bg-gradient-to-r from-orange-400 via-pink-400 to-orange-400 px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
+                    <span className='text-xs font-bold text-white bg-bloom px-3 py-1.5 rounded-full shadow-md whitespace-nowrap'>
                       -{salePercentage}% {saleName}
                     </span>
                   </div>
                 )}
-                <p className='font-medium text-stone-900 text-xl'>
+                <p className='font-medium text-clay text-xl'>
                   {formatCurrency(getSalePrice(PRICEMAGICGLOW, salePercentage))}
                 </p>
               </div>
@@ -139,39 +139,39 @@ export default function MagicGlowShopSite() {
 
             <div className='mt-4 space-y-6'>
               <ul className='list-disc ml-5'>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de' ? 'Verjüngung' : 'Rejuvenation'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de'
                     ? 'Natürliche OLIGOpeptide'
                     : 'Natural OLIGOpeptides'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de' ? 'Faltenreduzierung' : 'Reduces wrinkles'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de' ? 'ANTI-AGING effekt' : 'ANTI-AGING effect'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de'
                     ? 'Verlangsamt die Hautalterung'
                     : 'Slows down skin aging'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de' ? 'Zellwachstum' : 'Cell growth'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de'
                     ? 'Schutz vor oxidativen Stress'
                     : 'Protection against oxidative stress'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de'
                     ? 'Intensive Hautstraffung'
                     : 'Intensive skin tightening'}
                 </li>
-                <li className='text-lg text-stone-800'>
+                <li className='text-lg text-clay'>
                   {language == 'de' ? 'Wohlgefühl' : 'Well-being'}
                 </li>
               </ul>
@@ -217,9 +217,9 @@ export default function MagicGlowShopSite() {
               <div className='group inline-flex text-lg text-medium'>
                 <Shield
                   aria-hidden='true'
-                  className='mr-2 h-6 w-6 flex-shrink-0 text-stone-400'
+                  className='mr-2 h-6 w-6 flex-shrink-0 text-clay-soft/70'
                 />
-                <span className=' text-sm text-muted-foreground hover:text-stone-700'>
+                <span className=' text-sm text-muted-foreground hover:text-clay'>
                   {language == 'de'
                     ? 'Kunden Service Rund um die Uhr erreichbar unter'
                     : 'Customer Service available 24/7 at '}
@@ -234,7 +234,7 @@ export default function MagicGlowShopSite() {
 
       {/* Product description */}
       <div className='md:px-10 md:pb-20 pb-5'>
-        <h4 className=' text-stone-800 font-semibold'>
+        <h4 className=' text-clay font-semibold'>
           {language == 'de' ? 'Produktbeschreibung' : 'Product description'}
         </h4>
 
@@ -242,12 +242,12 @@ export default function MagicGlowShopSite() {
           <h5 className='text-center font-semibold text-orange-400'>
             MAGIC GLOW CREME
           </h5>
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'Ist eine Verbindung aus extrem niedrigen Micro Molekularen Oligo-HA Hyaluronsäure, CENTELLA ASIATICA, Aminosäuren, Vitaminen und einem fortschrittlichen OLIGOPEPTIDE WIRKSTOFF der einen signifikanten ANTI-AGING Effekt bietet und NÄHRSTOFFE für das ZELLWACHSTUM liefert, schützt vor oxidative STRESS und speziell für eine sichtbare Verjüngung entwickelt wurde. '
               : 'Is a compound of extremely low micro-molecular OLIGO-HA hyaluronic acid, CENTELLA ASIATICA, amino acids, vitamins and an advanced OLIGOPEPTIDE ACTIVE INGREDIENT that offers a significant ANTI-AGING effect and provides NUTRIENTS for CELL GROWTH, protects against oxidative STRESS and was specially developed for visible rejuvenation.'}
           </p>
-          <p className=' text-stone-950 leading-snug mt-3'>
+          <p className=' text-clay leading-snug mt-3'>
             {language == 'de'
               ? 'Mit dem Vorteil eine bessere Hautpenetration, maximiert OLIGO-HA die Befeuchtung der Haut und aktiviert gleichzeitig die Stammfunktion der Epidermis, fördert die Zelldifferenzierung und beugt so der vorzeitigen Hautalterung vor. WOHLGEFÜHL und sichtbare VERJÜNGUNG Klinisch nachgewiesene Faltenreduzierung und Verbesserung der Hautstraffung'
               : 'With the advantage of better skin penetration, OLIGO-HA maximizes skin hydration and activates the stem function of the epidermis, promotes cell differentiation and thus prevents premature skin aging. WELL-BEING and visible REJUVENATION Clinically proven wrinkle reduction and improvement of skin tightening'}
@@ -259,7 +259,7 @@ export default function MagicGlowShopSite() {
             <h5 className='text-center font-semibold text-orange-400'>
               MAGIC GLOW CREME
             </h5>
-            <p className=' text-stone-950 leading-snug '>
+            <p className=' text-clay leading-snug '>
               {language == 'de'
                 ? 'MAGIC GLOW CREME besitzt gezielte VERJÜNGENDE OLIGOPEPTIDE und Wirkstoffe natürlichen Ursprungs zur gezielten sichtbaren Faltenreduzierung, HAUTSTRUKTUR verbessernd, HAUTALTERUNG zu verlangsamen. MAGIC GLOW CREME eine wertvolle natürliche Verbindung für eine nachgewiesene FALTENREDUZIERUNG.'
                 : 'MAGIC GLOW CREME has targeted REJUVENATING OLIGOPEPTIDES and natural active ingredients for targeted visible wrinkle reduction, improving SKIN STRUCTURE, slowing down SKIN AGING. MAGIC GLOW CREME a valuable natural compound for proven WRINKLE REDUCTION.'}
@@ -273,11 +273,11 @@ export default function MagicGlowShopSite() {
             className=' max-w-80 rounded-md'
           />
         </div>
-        <h4 className=' text-stone-800 font-semibold mt-5'>
+        <h4 className=' text-clay font-semibold mt-5'>
           {language == 'de' ? 'Anwendung' : 'Application'}
         </h4>
-        <p className=' text-stone-800'>
-          <span className='text-stone-800 font-semibold'>
+        <p className=' text-clay'>
+          <span className='text-clay font-semibold'>
             {language == 'de' ? '2 mal ' : 'Twice '}
           </span>
           {language == 'de'

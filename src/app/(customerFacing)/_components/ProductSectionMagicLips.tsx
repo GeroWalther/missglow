@@ -1,23 +1,34 @@
 'use client';
 import React from 'react';
-import ProductInfo from './ProductInfo';
+import StoryRow from './StoryRow';
 import { useLanguage } from '@/contexts/LanguageProvider';
 import { MAGICLIPSPRICE, productImgsLips } from '../../../../consts';
 
 export default function ProductSectionMagicLips() {
   const { language } = useLanguage();
+  const isDE = language === 'de';
+
   return (
-    <ProductInfo
-      id='1'
-      productImgs={productImgsLips}
-      name='MAGIC LIPS SERUM'
+    <StoryRow
+      eyebrow={isDE ? 'Lippenpflege · Plumping' : 'Lip care · Plumping'}
+      title={isDE ? 'MAGIC LIPS Serum' : 'MAGIC LIPS Serum'}
       description={
-        language === 'de'
-          ? 'MAGIC LIPS SERUM  mit einem erstaunlichen LIP PLUMPING EFFEKT bis zu 78% mehr Lippenvolumen, verleiht absolute volle Aufpolsterung der Lippen und intensive Pflege. MAGIC LIPS SERUM enthält hocheffektive WIRKSTOFFKOSMETIK zum steigern der Attraktivität.'
-          : 'MAGIC LIPS SERUM with an amazing LIP PLUMPING EFFECT up to 78% more lip volume, gives absolute full plumping of the lips and intensive care. MAGIC LIPS SERUM contains highly effective ACTIVE COSMETICS to increase attractiveness.'
+        isDE
+          ? 'Bis zu 78 % mehr Lippenvolumen — absolute Aufpolsterung und intensive Pflege. Hocheffektive Wirkstoffkosmetik für sichtbar attraktivere Lippen.'
+          : 'Up to 78% more lip volume — full plumping and intensive care. Highly effective active cosmetics for visibly more attractive lips.'
+      }
+      benefits={
+        isDE
+          ? ['+78 % Volumen', 'Intensiv-Pflege', 'Wirkstoff-Kosmetik']
+          : ['+78% volume', 'Intensive care', 'Active cosmetics']
       }
       price={MAGICLIPSPRICE}
       productLink='/magicLips'
+      ctaLabel={isDE ? 'Zum Produkt' : 'Shop product'}
+      image={productImgsLips[0]}
+      imageAlt='Magic Lips Serum'
+      reverse
+      tone='cream'
     />
   );
 }

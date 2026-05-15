@@ -1,8 +1,23 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  axes: ['SOFT', 'opsz'],
+});
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
@@ -114,12 +129,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='de'>
-      <body
-        className={cn(
-          'bg-background min-h-screen font-sans antialiased',
-          inter.variable
-        )}>
+    <html
+      lang='de'
+      className={cn(inter.variable, fraunces.variable, jetbrainsMono.variable)}>
+      <body className='bg-background min-h-screen font-sans antialiased'>
         {children}
         <Analytics />
       </body>
