@@ -13,6 +13,7 @@ import {
   getEmailsNewsletter,
 } from '../_actions/getEmails';
 import DownloadCsv from '../_components/DownloadCsv';
+import SendDiscountCampaign from '../_components/SendDiscountCampaign';
 export default async function CustomerAdminPage() {
   const emails = await getEmailsOfOrderedCustomers();
   const newsletterEmailList = await getEmailsNewsletter();
@@ -46,6 +47,7 @@ export default async function CustomerAdminPage() {
           email={newsletterEmailList.map((e) => e.email)}
           newsletter
         />
+        <SendDiscountCampaign subscriberCount={newsletterEmailList.length} />
         <Table>
           <TableHeader>
             <TableRow>
