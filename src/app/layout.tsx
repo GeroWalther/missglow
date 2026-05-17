@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google';
+import { Inter, Fraunces, JetBrains_Mono, Poppins } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 const inter = Inter({
@@ -16,6 +16,12 @@ const fraunces = Fraunces({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
+  display: 'swap',
+});
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
 });
 import { Analytics } from '@vercel/analytics/next';
@@ -131,7 +137,12 @@ export default function RootLayout({
   return (
     <html
       lang='de'
-      className={cn(inter.variable, fraunces.variable, jetbrainsMono.variable)}>
+      className={cn(
+        inter.variable,
+        fraunces.variable,
+        jetbrainsMono.variable,
+        poppins.variable
+      )}>
       <body className='bg-background min-h-screen font-sans antialiased'>
         {children}
         <Analytics />
