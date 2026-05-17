@@ -9,7 +9,19 @@ import type { ProductContent } from './productContentV2';
 export default function FaqV2({ faq }: { faq: ProductContent['faq'] }) {
   const { language } = useLanguage();
   const isDE = language === 'de';
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  // Start with every entry expanded — admin can still collapse individuals.
+  const [openIndices, setOpenIndices] = useState<Set<number>>(
+    () => new Set(faq.map((_, i) => i))
+  );
+
+  function toggle(i: number) {
+    setOpenIndices((prev) => {
+      const next = new Set(prev);
+      if (next.has(i)) next.delete(i);
+      else next.add(i);
+      return next;
+    });
+  }
 
   return (
     <section className='space-y-4'>
@@ -26,12 +38,13 @@ export default function FaqV2({ faq }: { faq: ProductContent['faq'] }) {
 
       <ul className='mt-6 divide-y divide-border border-y border-border'>
         {faq.map((item, i) => {
-          const isOpen = openIndex === i;
+          const isOpen = openIndices.has(i);
           return (
             <li key={i}>
               <button
                 type='button'
-                onClick={() => setOpenIndex(isOpen ? null : i)}
+                onClick={() => toggle(i)}
+                aria-expanded={isOpen}
                 className='w-full flex items-center justify-between gap-4 py-5 text-left hover:text-bloom-deep transition-colors'>
                 <span
                   className='text-base sm:text-lg font-medium uppercase tracking-tight'
