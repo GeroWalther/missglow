@@ -1,22 +1,16 @@
 import db from '@/db';
-
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    //  console.log('BODY: ', body);
     const discountCode = body.inputVal;
-    // console.log('DISCOUNTCODE: ', discountCode);
 
-    // Check if the discount code exists in the database
     const discount = await db.discountCode.findFirst({
-      where: {
-        code: discountCode,
-      },
+      where: { code: discountCode },
     });
 
-    if (!discount || discount == null) {
+    if (!discount) {
       return NextResponse.json(
         {
           discountInPercent: 0,
@@ -27,9 +21,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Check if the discount code has expired
-    const currentDate = new Date();
-    if (currentDate > discount.expiresAt) {
+    // Expired?
+    if (new Date() > discount.expiresAt) {
       return NextResponse.json(
         {
           discountInPercent: 0,
@@ -40,7 +33,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // If the discount code is valid, send back the discount in percent
+    // Single-use codes can only be redeemed once. The increment happens in the
+    // Stripe webhook after the order is saved.
+    const usedCount = discount.usedCount ?? 0;
+    if (discount.singleUse && usedCount >= 1) {
+      return NextResponse.json(
+        {
+          discountInPercent: 0,
+          message: 'This code has already been used.',
+          code: 1,
+        },
+        { status: 200 }
+      );
+    }
+
     return NextResponse.json(
       {
         discountInPercent: discount.discountInPercent,
@@ -52,12 +58,8 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error(error);
     return NextResponse.json(
-      {
-        error: 'Internal server error',
-      },
-      {
-        status: 500,
-      }
+      { error: 'Internal server error' },
+      { status: 500 }
     );
   }
 }

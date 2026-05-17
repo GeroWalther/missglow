@@ -13,9 +13,25 @@ import {
 
 type WelcomeEmailProps = {
   name: string;
+  code: string;
+  discountPercent?: number;
+  expiresAt?: Date;
 };
 
-export default function Subscribed({ name }: WelcomeEmailProps) {
+export default function Subscribed({
+  name,
+  code,
+  discountPercent = 15,
+  expiresAt,
+}: WelcomeEmailProps) {
+  const expiresLabel = expiresAt
+    ? new Date(expiresAt).toLocaleDateString('de-DE', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+      })
+    : null;
+
   return (
     <Html>
       <Preview>Willkommen bei Miss Glow Beauty!</Preview>
@@ -35,13 +51,21 @@ export default function Subscribed({ name }: WelcomeEmailProps) {
             </Heading>
             <Text className='-mt-10'>
               Vielen Dank, dass du dich bei Miss Glow Beauty Newsletter
-              eingeschrieben hast. Als Dankeschön bekommst du einen Rabattcode
-              für deinen nächsten Einkauf:
+              eingeschrieben hast. Als Dankeschön bekommst du{' '}
+              <strong>{discountPercent}%</strong> Rabatt auf deine erste
+              Bestellung mit folgendem persönlichen Code:
             </Text>
-            <Text className='mt-5 font-bold'>GLOW15</Text>
+            <Text className='mt-5 text-2xl font-bold tracking-widest'>
+              {code}
+            </Text>
+            <Text className='text-sm text-gray-600'>
+              Dieser Code ist <strong>nur einmal gültig</strong> und auf dich
+              persönlich ausgestellt.
+              {expiresLabel ? ` Gültig bis ${expiresLabel}.` : ''}
+            </Text>
             <Section className='p-4'>
               <Text>
-                Wenn du Fragen haben solltest, kanst du uns gerne unter{' '}
+                Wenn du Fragen haben solltest, kannst du uns gerne unter{' '}
                 {process.env.NEXT_PUBLIC_ADMINEMAIL} kontaktieren.
               </Text>
             </Section>

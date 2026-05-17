@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { Resend } from 'resend';
 import PurchaseReceiptEmail from '@/email/PurchaseReceipt';
+import db from '@/db';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -68,6 +69,20 @@ export async function POST(req: NextRequest) {
       pricePaidInCents,
       discountCode || '-'
     );
+
+    // Mark the discount code as redeemed (for single-use codes this blocks
+    // future redemptions). Best-effort: failures are logged but don't fail the
+    // webhook — the order has already been saved successfully.
+    if (discountCode && discountCode !== '-') {
+      try {
+        await db.discountCode.updateMany({
+          where: { code: discountCode },
+          data: { usedCount: { increment: 1 } },
+        });
+      } catch (e) {
+        console.error('Failed to increment discount usedCount:', e);
+      }
+    }
 
     try {
       await resend.emails.send({

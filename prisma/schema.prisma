@@ -84,10 +84,17 @@ model Order {
 }
 
 model DiscountCode {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  code      String  @unique
-  discountInPercent  Float
-  expiresAt DateTime
+  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  code              String   @unique
+  discountInPercent Float
+  expiresAt         DateTime
+  // Single-use newsletter codes: set singleUse=true; otherwise behaves like the
+  // existing admin Rabattaktionen codes (multi-use until expiry).
+  singleUse         Boolean? @default(false)
+  usedCount         Int?     @default(0)
+  // Subscriber the code was issued to (newsletter); null for admin codes.
+  subscriberEmail   String?
+  createdAt         DateTime @default(now())
 }
 
 model Newsletter {

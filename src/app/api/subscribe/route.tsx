@@ -1,9 +1,13 @@
 import db from '@/db';
 import { NextRequest, NextResponse } from 'next/server';
-
 import { Resend } from 'resend';
-const resend = new Resend(process.env.RESEND_API_KEY);
 import Subscribed from '@/email/Subscribed';
+import { generateUniqueGlowCode } from '@/lib/generateDiscountCode';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const NEWSLETTER_DISCOUNT_PERCENT = 15;
+const NEWSLETTER_VALIDITY_DAYS = 90;
 
 export async function POST(
   req: NextRequest
@@ -11,7 +15,7 @@ export async function POST(
   try {
     const body = await req.json();
     const { email, name, emailIsValid } = body;
-    // console.log('EMAIL:', email, 'NAME:', name, 'EMAILISVALID:', emailIsValid);
+
     if (!email || !emailIsValid) {
       return NextResponse.json(
         {
@@ -32,6 +36,7 @@ export async function POST(
         { status: 400 }
       );
     }
+
     try {
       await db.newsletter.create({
         data: {
@@ -48,18 +53,41 @@ export async function POST(
       );
     }
 
-    //email to subscriber
+    // Generate a unique single-use discount code for this subscriber.
+    const code = await generateUniqueGlowCode();
+    const expiresAt = new Date(
+      Date.now() + NEWSLETTER_VALIDITY_DAYS * 24 * 60 * 60 * 1000
+    );
+    await db.discountCode.create({
+      data: {
+        code,
+        discountInPercent: NEWSLETTER_DISCOUNT_PERCENT,
+        expiresAt,
+        singleUse: true,
+        usedCount: 0,
+        subscriberEmail: email,
+      },
+    });
+
+    // Email the personal code to the subscriber.
     await resend.emails.send({
       from: `Newsletter <${process.env.SENDER_EMAIL}>`,
       to: email.toString().trim() as string,
-      subject: 'Hier is dein Gutscheincode!',
-      react: <Subscribed name={name} />,
+      subject: 'Hier ist dein persönlicher Gutscheincode!',
+      react: (
+        <Subscribed
+          name={name}
+          code={code}
+          discountPercent={NEWSLETTER_DISCOUNT_PERCENT}
+          expiresAt={expiresAt}
+        />
+      ),
     });
 
     return NextResponse.json(
       {
         error: '',
-        msg: 'Erfolgreich eingeschrieben!🎉 Wir haben dir eine Email mit deinem Rabattcode gesendet!',
+        msg: 'Erfolgreich eingeschrieben!🎉 Wir haben dir eine Email mit deinem persönlichen Rabattcode gesendet!',
         code: 2,
       },
       { status: 201 }
