@@ -260,12 +260,12 @@ export default function AboutPageV2() {
           className='absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(ellipse_at_bottom_center,_var(--bloom-deep)_0%,_transparent_75%)] opacity-15 pointer-events-none'
         />
         <div className='relative container-page-v2 pt-32 sm:pt-48 pb-32 sm:pb-40 flex flex-col items-center'>
-          <div className='relative w-44 sm:w-52 aspect-[3/1]'>
+          <div className='relative w-80 sm:w-[28rem] md:w-[34rem] aspect-[3/1]'>
             <Image
               src='/lippe.png'
               alt='Miss Glow Beauty'
               fill
-              sizes='208px'
+              sizes='(max-width: 640px) 320px, (max-width: 768px) 448px, 544px'
               className='object-contain'
             />
           </div>
