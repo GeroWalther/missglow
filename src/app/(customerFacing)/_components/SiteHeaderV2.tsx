@@ -16,19 +16,19 @@ export default function SiteHeaderV2() {
   const isDE = language === 'de';
 
   const NAV_LINKS = [
-    { href: '/v2', key: 'home', label: isDE ? 'Start' : 'Home' },
+    { href: '/', key: 'home', label: isDE ? 'Start' : 'Home' },
     {
-      href: '/v2#products',
+      href: '/#products',
       key: 'shop',
       label: isDE ? 'Boutique' : 'Boutique',
     },
-    { href: '/v2/about', key: 'about', label: isDE ? 'Über uns' : 'About' },
+    { href: '/about', key: 'about', label: isDE ? 'Über uns' : 'About' },
   ];
 
   return (
     <header className='sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-xl'>
       <div className='container-page-v2 flex h-16 items-center justify-between'>
-        <Link href='/v2' className='flex items-center gap-2 group'>
+        <Link href='/' className='flex items-center gap-2 group'>
           <span className='block size-3 rounded-full bg-bloom-deep transition group-hover:scale-110' />
           <span
             className='text-sm font-extrabold uppercase tracking-tight'

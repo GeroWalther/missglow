@@ -28,7 +28,7 @@ export default function ProductPageV2({ product }: { product: ProductContent }) 
   return (
     <div className='container-page-v2 py-12 sm:py-16'>
       <Link
-        href='/v2'
+        href='/'
         className='inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground'
         style={{ fontFamily: 'var(--font-mono)' }}>
         <ArrowLeft className='size-3.5' />
@@ -263,7 +263,7 @@ export default function ProductPageV2({ product }: { product: ProductContent }) 
             {others.map((p) => (
               <Link
                 key={p.id}
-                href={`/v2/${p.slug}`}
+                href={`/${p.slug}`}
                 className='group flex flex-col rounded-md border border-border bg-card overflow-hidden hover:shadow-lg transition-shadow'>
                 <div className='relative aspect-[4/5] bg-blush'>
                   <Image
@@ -302,7 +302,7 @@ export default function ProductPageV2({ product }: { product: ProductContent }) 
           </div>
           <div className='mt-10'>
             <Link
-              href='/v2#products'
+              href='/#products'
               className='inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md border border-border text-sm font-semibold uppercase tracking-wide hover:bg-foreground hover:text-background transition-colors'>
               {isDE ? 'Zur Kollektion' : 'Shop the collection'}
               <ArrowUpRight className='size-4' />

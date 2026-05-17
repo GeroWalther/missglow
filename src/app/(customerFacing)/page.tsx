@@ -1,28 +1,19 @@
-import React from 'react';
-import HeroComp from '../../components/components/homepage/Hero';
-import MarqueeBand from '../../components/components/homepage/MarqueeBand';
-import Subscribe from '@/components/components/homepage/EmailSubscription';
-import TestimonialsSection from '@/components/components/homepage/Testimonials';
-import FeaturesSection from './_components/Features';
-import ProductSectionMagicLips from './_components/ProductSectionMagicLips';
-import ProductDisplay from './_components/ProductDisplay';
-import ProductSectionBetox from './_components/ProductSectionBetox';
-import FullBleedCTA from './_components/FullBleedCTA';
-import AnimatedStats from './_components/AnimatedStats';
+import HeroV2 from './_components/HeroV2';
+import MarqueeBandV2 from './_components/MarqueeBandV2';
+import BrandStoryV2 from './_components/BrandStoryV2';
+import ProductsHighlightV2 from './_components/ProductsHighlightV2';
+import NewsletterV2 from './_components/NewsletterV2';
+import CtaSectionV2 from './_components/CtaSectionV2';
 
-export default function HomePage() {
+export default function HomePageV2() {
   return (
     <>
-      <HeroComp />
-      <MarqueeBand />
-      <ProductSectionBetox />
-      <ProductDisplay />
-      <AnimatedStats />
-      <FeaturesSection />
-      <ProductSectionMagicLips />
-      <TestimonialsSection />
-      <FullBleedCTA />
-      <Subscribe />
+      <HeroV2 />
+      <MarqueeBandV2 />
+      <BrandStoryV2 />
+      <ProductsHighlightV2 />
+      <NewsletterV2 />
+      <CtaSectionV2 />
     </>
   );
 }

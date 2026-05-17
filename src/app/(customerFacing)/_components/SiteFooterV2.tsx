@@ -15,7 +15,7 @@ export default function SiteFooterV2() {
       <div className='container-page-v2 py-16'>
         <div className='grid gap-12 lg:grid-cols-12'>
           <div className='lg:col-span-5'>
-            <Link href='/v2' className='flex items-center gap-2'>
+            <Link href='/' className='flex items-center gap-2'>
               <span className='block size-3 rounded-full bg-bloom-deep' />
               <span
                 className='text-sm font-extrabold uppercase tracking-tight'
@@ -80,19 +80,19 @@ export default function SiteFooterV2() {
             </p>
             <ul className='space-y-2 text-sm'>
               <li>
-                <Link href='/v2/imprint' className='hover:text-bloom-deep'>
+                <Link href='/imprint' className='hover:text-bloom-deep'>
                   {isDE ? 'Impressum' : 'Imprint'}
                 </Link>
               </li>
               <li>
                 <Link
-                  href='/v2/privacy-policy'
+                  href='/privacy-policy'
                   className='hover:text-bloom-deep'>
                   {isDE ? 'Datenschutz' : 'Privacy Policy'}
                 </Link>
               </li>
               <li>
-                <Link href='/v2/returns' className='hover:text-bloom-deep'>
+                <Link href='/returns' className='hover:text-bloom-deep'>
                   {isDE
                     ? 'Widerruf & Rücksendungen'
                     : 'Cancellation & Returns'}

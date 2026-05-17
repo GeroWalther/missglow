@@ -3,7 +3,7 @@ import Stripe from 'stripe';
 import { notFound } from 'next/navigation';
 import ProductOredered from './_component/ProductOredered';
 import Image from 'next/image';
-import ProductDisplay from '../../_components/ProductDisplay';
+import ProductsHighlightV2 from '../../_components/ProductsHighlightV2';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? '', {
   apiVersion: '2024-06-20',
@@ -89,7 +89,7 @@ export default async function SuccessPage({
         <h2 className='text-2xl max-w-prose text-clay font-light mb-4 md:mb-10 mx-20'>
           <span className='font-bold text-bloom'>The Glow Look!</span>
         </h2>
-        <ProductDisplay />
+        <ProductsHighlightV2 />
       </div>
     </main>
   );
