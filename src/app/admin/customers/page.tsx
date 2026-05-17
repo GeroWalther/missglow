@@ -47,7 +47,7 @@ export default async function CustomerAdminPage() {
           email={newsletterEmailList.map((e) => e.email)}
           newsletter
         />
-        <SendDiscountCampaign subscriberCount={newsletterEmailList.length} />
+        <SendDiscountCampaign subscribers={newsletterEmailList} />
         <Table>
           <TableHeader>
             <TableRow>

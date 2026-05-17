@@ -19,8 +19,14 @@ export async function sendDiscountCampaign(input: {
   validityDays: number;
   intro?: string;
   subject?: string;
+  /**
+   * When provided, only these subscriber emails receive a code. When omitted
+   * or empty, the campaign is sent to every newsletter subscriber.
+   */
+  subscriberEmails?: string[];
 }): Promise<CampaignResult> {
-  const { discountPercent, validityDays, intro, subject } = input;
+  const { discountPercent, validityDays, intro, subject, subscriberEmails } =
+    input;
 
   if (
     !Number.isFinite(discountPercent) ||
@@ -33,7 +39,13 @@ export async function sendDiscountCampaign(input: {
     throw new Error('Validity must be at least 1 day.');
   }
 
+  const emailFilter =
+    subscriberEmails && subscriberEmails.length > 0
+      ? { email: { in: subscriberEmails } }
+      : undefined;
+
   const subscribers = await db.newsletter.findMany({
+    where: emailFilter,
     select: { email: true, name: true },
   });
 
