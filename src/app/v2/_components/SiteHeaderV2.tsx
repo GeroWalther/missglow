@@ -22,7 +22,7 @@ export default function SiteHeaderV2() {
       key: 'shop',
       label: isDE ? 'Boutique' : 'Boutique',
     },
-    { href: '/about', key: 'about', label: isDE ? 'Über uns' : 'About' },
+    { href: '/v2/about', key: 'about', label: isDE ? 'Über uns' : 'About' },
   ];
 
   return (

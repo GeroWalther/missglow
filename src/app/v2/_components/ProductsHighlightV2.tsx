@@ -24,7 +24,7 @@ export default function ProductsHighlightV2() {
   const products: V2Product[] = [
     {
       id: '1',
-      slug: '/magicLips',
+      slug: '/v2/magicLips',
       name: 'Magic Lips Serum',
       shortDescriptionDE:
         'Bis zu 78 % mehr Lippenvolumen — Wirkstoffkosmetik für volle, gepflegte Lippen.',
@@ -35,7 +35,7 @@ export default function ProductsHighlightV2() {
     },
     {
       id: '2',
-      slug: '/magicGlow',
+      slug: '/v2/magicGlow',
       name: 'Magic Glow Cream',
       shortDescriptionDE:
         'Tagespflege mit Sofort-Glow-Effekt für ein strahlendes Hautbild.',
@@ -46,7 +46,7 @@ export default function ProductsHighlightV2() {
     },
     {
       id: '3',
-      slug: '/freshEyes',
+      slug: '/v2/freshEyes',
       name: 'Fresh Eyes Serum',
       shortDescriptionDE:
         'Intensive Pflege für die Augenpartie — sichtbar frischer Blick.',
@@ -57,7 +57,7 @@ export default function ProductsHighlightV2() {
     },
     {
       id: '4',
-      slug: '/betoxserum',
+      slug: '/v2/betoxserum',
       name: 'Betox Serum',
       shortDescriptionDE:
         '−64 % Falten in 30 Tagen. Wirkstoffkosmetik mit Botox-Effekt.',
@@ -68,7 +68,7 @@ export default function ProductsHighlightV2() {
     },
     {
       id: '5',
-      slug: '/magicElixir',
+      slug: '/v2/magicElixir',
       name: 'Magic Elixir',
       shortDescriptionDE:
         'Konzentriertes Anti-Aging-Elixier für jugendliche, strahlende Haut.',
@@ -79,7 +79,7 @@ export default function ProductsHighlightV2() {
     },
     {
       id: '6',
-      slug: '/faceCleanser',
+      slug: '/v2/faceCleanser',
       name: 'Face Cleanser',
       shortDescriptionDE:
         'Sanfte Reinigung, die Make-up und Unreinheiten zuverlässig entfernt.',
