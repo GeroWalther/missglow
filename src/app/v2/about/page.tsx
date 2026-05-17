@@ -263,13 +263,13 @@ export default function AboutPageV2() {
           <Image
             src='/lippe.png'
             alt='Miss Glow Beauty'
-            width={900}
-            height={700}
+            width={600}
+            height={500}
             priority
-            className='h-auto w-[22rem] sm:w-[32rem] md:w-[40rem]'
+            className='h-auto w-56 sm:w-72 md:w-80'
           />
           <p
-            className='-mt-10 sm:-mt-16 italic text-foreground/80 text-xl sm:text-2xl text-center'
+            className='-mt-14 sm:-mt-20 italic text-foreground/80 text-xl sm:text-2xl text-center'
             style={{ fontFamily: 'var(--font-display)' }}>
             ..... made for your glow.
           </p>
