@@ -91,7 +91,7 @@ export default function ProductPageV2({ product }: { product: ProductContent }) 
               Miss Glow Beauty
             </p>
             <h1
-              className='text-4xl sm:text-5xl mt-3 uppercase tracking-[-0.02em] leading-[1.02]'
+              className='text-3xl sm:text-4xl mt-3 uppercase tracking-[-0.02em] leading-[1.05]'
               style={{ fontFamily: 'var(--font-poppins)' }}>
               {product.name}
             </h1>
@@ -114,7 +114,7 @@ export default function ProductPageV2({ product }: { product: ProductContent }) 
 
           <div className='flex items-baseline gap-3'>
             <p
-              className='text-2xl sm:text-3xl font-medium tracking-tight'
+              className='text-xl sm:text-2xl font-medium tracking-tight'
               style={{ fontFamily: 'var(--font-poppins)' }}>
               {formatCurrency(finalPrice)}
             </p>
