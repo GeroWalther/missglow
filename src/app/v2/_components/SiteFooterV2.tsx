@@ -80,17 +80,19 @@ export default function SiteFooterV2() {
             </p>
             <ul className='space-y-2 text-sm'>
               <li>
-                <Link href='/imprint' className='hover:text-bloom-deep'>
+                <Link href='/v2/imprint' className='hover:text-bloom-deep'>
                   {isDE ? 'Impressum' : 'Imprint'}
                 </Link>
               </li>
               <li>
-                <Link href='/privacy-policy' className='hover:text-bloom-deep'>
+                <Link
+                  href='/v2/privacy-policy'
+                  className='hover:text-bloom-deep'>
                   {isDE ? 'Datenschutz' : 'Privacy Policy'}
                 </Link>
               </li>
               <li>
-                <Link href='/returns' className='hover:text-bloom-deep'>
+                <Link href='/v2/returns' className='hover:text-bloom-deep'>
                   {isDE
                     ? 'Widerruf & Rücksendungen'
                     : 'Cancellation & Returns'}

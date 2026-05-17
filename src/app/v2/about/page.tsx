@@ -269,7 +269,7 @@ export default function AboutPageV2() {
             className='h-auto w-56 sm:w-72 md:w-80'
           />
           <p
-            className='-mt-14 sm:-mt-20 italic text-foreground/80 text-xl sm:text-2xl text-center'
+            className='-mt-24 sm:-mt-28 italic text-foreground/80 text-xl sm:text-2xl text-center'
             style={{ fontFamily: 'var(--font-display)' }}>
             ..... made for your glow.
           </p>
