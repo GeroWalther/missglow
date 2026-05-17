@@ -260,7 +260,7 @@ export default function AboutPageV2() {
           className='absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(ellipse_at_bottom_center,_var(--bloom-deep)_0%,_transparent_75%)] opacity-15 pointer-events-none'
         />
         <div className='relative container-page-v2 pt-12 sm:pt-16 pb-16 sm:pb-20 flex flex-col items-center'>
-          <div className='relative w-80 sm:w-[28rem] md:w-[34rem] aspect-[3/1]'>
+          <div className='relative w-80 sm:w-[28rem] md:w-[34rem] aspect-[7/2]'>
             <Image
               src='/lippe.png'
               alt='Miss Glow Beauty'
@@ -270,7 +270,7 @@ export default function AboutPageV2() {
             />
           </div>
           <p
-            className='mt-2 italic text-foreground/80 text-xl sm:text-2xl text-center'
+            className='-mt-1 italic text-foreground/80 text-xl sm:text-2xl text-center'
             style={{ fontFamily: 'var(--font-display)' }}>
             ..... made for your glow.
           </p>
