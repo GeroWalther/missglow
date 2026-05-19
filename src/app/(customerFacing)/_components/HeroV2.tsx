@@ -60,7 +60,7 @@ export default function HeroV2() {
                 priority
                 unoptimized
                 sizes='(max-width: 1024px) 80vw, 40vw'
-                className='object-cover rounded-md'
+                className='object-contain'
               />
             </div>
             <p
