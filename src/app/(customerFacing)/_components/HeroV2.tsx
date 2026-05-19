@@ -52,12 +52,12 @@ export default function HeroV2() {
         {/* GIF below, full container width */}
         <div className='relative mt-14 lg:mt-20 w-full aspect-[16/9] rounded-md overflow-hidden bg-blush'>
           <Image
-            src='/Miss Glow Neue Produkt Bilder 2026/Video Startseite oben.gif'
-            alt='Miss Glow Beauty — Magic Lips Serum study'
+            src='/Miss Glow Neue Produkt Bilder 2026/Video fur startseite.gif'
+            alt='Miss Glow Beauty — hero'
             fill
             priority
             unoptimized
-            sizes='100vw'
+            sizes='(max-width: 1024px) 80vw, 40vw'
             className='object-contain'
           />
         </div>
