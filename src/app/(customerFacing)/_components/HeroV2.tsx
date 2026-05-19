@@ -54,7 +54,7 @@ export default function HeroV2() {
           <div className='lg:col-span-5 lg:self-start flex flex-col items-center'>
             <div className='relative w-full aspect-square max-w-[520px]'>
               <Image
-                src='/MagicGlowCreme1.JPG'
+                src='/missglow-product.jpg'
                 alt='Miss Glow Beauty — hero product'
                 fill
                 priority
