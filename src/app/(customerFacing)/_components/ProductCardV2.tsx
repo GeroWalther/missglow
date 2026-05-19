@@ -38,7 +38,7 @@ export default function ProductCardV2({ product }: { product: V2Product }) {
           alt={product.name}
           fill
           sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
-          className='object-cover transition-transform duration-500 group-hover:scale-105'
+          className='object-contain p-6 transition-transform duration-500 group-hover:scale-105'
         />
         <span
           className='absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-background/85 backdrop-blur px-2.5 py-1 text-[10px] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition'

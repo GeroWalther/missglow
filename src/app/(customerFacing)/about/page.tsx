@@ -39,34 +39,30 @@ export default function AboutPageV2() {
 
   return (
     <>
-      {/* Hero with image + gradient fade */}
-      <section className='relative h-[55vh] min-h-[360px] max-h-[560px] overflow-hidden border-b border-border'>
-        <Image
-          src='/werdeTeil.jpg'
-          alt='Miss Glow Beauty — werde Teil'
-          fill
-          priority
-          sizes='100vw'
-          className='object-cover'
-        />
-        <div
-          aria-hidden
-          className='absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent'
-        />
-        <div
-          aria-hidden
-          className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--candy)_0%,_transparent_55%)] opacity-40'
-        />
-        <div className='container-page-v2 relative z-10 h-full flex flex-col justify-end pb-4 sm:pb-6'>
-          <p
-            className='text-xs uppercase tracking-[0.18em] text-foreground mb-3'
-            style={{ fontFamily: 'var(--font-mono)' }}>
-            {isDE ? 'Über uns' : 'About us'}
-          </p>
-          <h1 className='display-v2 text-[clamp(2.25rem,5.5vw,4.5rem)] max-w-3xl whitespace-pre-line tracking-[-0.025em] text-foreground'>
-            {isDE ? 'Glow. Beauty. Power.' : 'Glow. Beauty. Power.'}
-          </h1>
+      {/* Hero image — clean, no overlaid text */}
+      <section className='container-page-v2 pt-8 sm:pt-12'>
+        <div className='relative w-full max-w-3xl mx-auto aspect-[1018/519] overflow-hidden rounded-md border border-border bg-blush'>
+          <Image
+            src='/newProdImages/IMG_3229.jpg'
+            alt=''
+            fill
+            priority
+            sizes='(max-width: 768px) 100vw, 768px'
+            className='object-contain'
+          />
         </div>
+      </section>
+
+      {/* Page heading sits below the image */}
+      <section className='container-page-v2 pt-12 sm:pt-16'>
+        <p
+          className='text-xs uppercase tracking-[0.18em] text-muted-foreground mb-3'
+          style={{ fontFamily: 'var(--font-mono)' }}>
+          {isDE ? 'Über uns' : 'About us'}
+        </p>
+        <h1 className='display-v2 text-[clamp(2.25rem,5.5vw,4.5rem)] max-w-3xl whitespace-pre-line tracking-[-0.025em] text-foreground'>
+          {isDE ? 'Glow. Beauty. Power.' : 'Glow. Beauty. Power.'}
+        </h1>
       </section>
 
       {/* Intro + pull quote + origin */}

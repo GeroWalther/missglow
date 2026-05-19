@@ -52,7 +52,7 @@ export default function ProductPageV2({ product }: { product: ProductContent }) 
                 fill
                 priority
                 sizes='(max-width: 1024px) 100vw, 50vw'
-                className='object-cover'
+                className='object-contain p-6 sm:p-10'
               />
             </motion.div>
           </div>
@@ -74,7 +74,7 @@ export default function ProductPageV2({ product }: { product: ProductContent }) 
                     alt=''
                     fill
                     sizes='120px'
-                    className='object-cover'
+                    className='object-contain p-1'
                   />
                 </button>
               ))}
@@ -271,7 +271,7 @@ export default function ProductPageV2({ product }: { product: ProductContent }) 
                     alt={p.name}
                     fill
                     sizes='(max-width: 640px) 100vw, 33vw'
-                    className='object-cover transition-transform duration-500 group-hover:scale-105'
+                    className='object-contain p-6 transition-transform duration-500 group-hover:scale-105'
                   />
                 </div>
                 <div className='p-6 flex flex-col gap-2'>

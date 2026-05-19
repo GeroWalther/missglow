@@ -8,6 +8,10 @@ type Props = {
   title: string;
   heroImage: string;
   heroAlt?: string;
+  /** Raw CSS object-position value, e.g. 'top', 'center', 'center 25%'. Defaults to 'center'. */
+  heroPosition?: string;
+  /** Extra zoom on the hero image; 1 = none, 1.5 = 50% zoom-in. Defaults to 1. */
+  heroScale?: number;
   children: ReactNode;
 };
 
@@ -16,6 +20,8 @@ export default function LegalPageLayoutV2({
   title,
   heroImage,
   heroAlt = '',
+  heroPosition = 'center',
+  heroScale = 1,
   children,
 }: Props) {
   return (
@@ -29,6 +35,11 @@ export default function LegalPageLayoutV2({
           priority
           sizes='100vw'
           className='object-cover'
+          style={{
+            objectPosition: heroPosition,
+            transform: heroScale !== 1 ? `scale(${heroScale})` : undefined,
+            transformOrigin: heroPosition,
+          }}
         />
         <div
           aria-hidden

@@ -2,12 +2,14 @@ import {
   BETOXPRICE,
   FACECLEANSERPRICE,
   FRESHEZESPRICE,
+  LONGEVITYPRICE,
   MAGICELIXIRPRICE,
   MAGICLIPSPRICE,
   PRICEMAGICGLOW,
   productImagesFaceCleanser,
   productImagesFresh,
   productImagesGlowCreme,
+  productImagesLongevity,
   productImagesMagicElixir,
   productImgsBetox,
   productImgsLips,
@@ -335,7 +337,7 @@ export const PRODUCTS_V2: ProductContent[] = [
     name: 'Fresh Eyes Serum',
     price: FRESHEZESPRICE,
     images: productImagesFresh,
-    volume: { de: '15ml', en: '15ml' },
+    volume: { de: '50ml', en: '50ml' },
     shippingNote: {
       de: 'Wird in 1–2 Wochen versendet.',
       en: 'Ships within 1–2 weeks.',
@@ -419,7 +421,7 @@ export const PRODUCTS_V2: ProductContent[] = [
     name: 'Magic Elixir',
     price: MAGICELIXIRPRICE,
     images: productImagesMagicElixir,
-    volume: { de: '30ml', en: '30ml' },
+    volume: { de: '10ml', en: '10ml' },
     shippingNote: {
       de: 'Wird in 1–2 Wochen versendet.',
       en: 'Ships within 1–2 weeks.',
@@ -575,6 +577,104 @@ export const PRODUCTS_V2: ProductContent[] = [
         answer: {
           de: 'Morgens und abends als erster Schritt deiner Pflegeroutine.',
           en: 'Morning and evening as the first step of your skincare routine.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'longevity',
+    slug: 'longevity',
+    name: 'Longevity Beauty',
+    price: LONGEVITYPRICE,
+    images: productImagesLongevity,
+    volume: { de: '100 ml / 60 g', en: '100 ml / 60 g' },
+    shippingNote: {
+      de: 'Wird in 1–2 Wochen versendet.',
+      en: 'Ships within 1–2 weeks.',
+    },
+    tagline: {
+      de: 'Wohlbefinden, Energie & Beauty Support',
+      en: 'Wellbeing, energy & beauty support',
+    },
+    shortDesc: {
+      de: 'Modernes Nahrungsergänzungsmittel mit Fokus auf ganzheitliches Wohlbefinden, Vitalität und Beauty-Unterstützung — Where Nature Meets Science.',
+      en: 'A modern supplement focused on holistic wellbeing, vitality and beauty support — Where Nature Meets Science.',
+    },
+    features: {
+      de: [
+        'Unterstützt Energie und mentale Klarheit',
+        'Fördert ein angenehmes Körpergefühl',
+        'Beauty-Support von innen',
+        'Ergänzung für einen aktiven Lebensstil',
+        'Where Nature Meets Science',
+      ],
+      en: [
+        'Supports energy and mental clarity',
+        'Promotes a pleasant body feeling',
+        'Beauty support from within',
+        'Complement to an active lifestyle',
+        'Where Nature Meets Science',
+      ],
+    },
+    longDescParagraphs: {
+      de: [
+        'LONGEVITY BEAUTY präsentiert sich als modernes Nahrungsergänzungsmittel mit Fokus auf ganzheitliches Wohlbefinden, Vitalität und Beauty-Unterstützung. Bereits das Konzept „Where Nature Meets Science" — der Anspruch, natürliche Inhaltsstoffe mit einem modernen Gesundheitsansatz zu verbinden.',
+        'Im Alltag überzeugt LONGEVITY BEAUTY vor allem durch das angenehme Körpergefühl und das subjektiv gesteigerte Energielevel. Viele Anwender wünschen sich im hektischen Alltag mehr Balance, mentale Klarheit und körperliches Wohlbefinden — genau hier setzt das Produkt an.',
+        'Besonders positiv fällt auf, dass LONGEVITY BEAUTY dazu beitragen kann, sich energiegeladener, fokussierter und insgesamt vitaler zu fühlen. Gleichzeitig berichten Nutzer häufig über ein verbessertes Körpergefühl und einen klareren Geist im Alltag.',
+        'Im Rahmen einer ausgewogenen Ernährung und eines aktiven Lebensstils kann LONGEVITY BEAUTY den Körper dabei unterstützen, sich leichter und wohler zu fühlen. Das Produkt wird häufig mit einem aktivierten Wohlbefinden und einer Unterstützung des Stoffwechsels in Verbindung gebracht.',
+        'Gerade in Kombination mit Bewegung und bewusster Ernährung kann LONGEVITY BEAUTY eine sinnvolle Ergänzung sein, wenn das Ziel ein gesünderes Körpergefühl und die Unterstützung einer schlankeren Figur ist.',
+        'Das Produkt macht einen hochwertigen Eindruck und richtet sich an Menschen, die ihren Körper ganzheitlich unterstützen möchten — insbesondere in den Bereichen Energie, Beauty, Wohlbefinden und innere Balance.',
+        'MISS GLOW BEAUTY – LONGEVITY BEAUTY hinterlässt einen modernen und vielversprechenden Eindruck für alle, die mehr Vitalität, innere Balance und Wohlbefinden in ihren Alltag integrieren möchten. Besonders hervorzuheben sind das gesteigerte Energiegefühl, mentale Klarheit sowie das angenehme Körpergefühl. In Kombination mit einem gesunden Lebensstil kann das Produkt eine wertvolle Unterstützung sein.',
+      ],
+      en: [
+        'LONGEVITY BEAUTY is a modern supplement focused on holistic wellbeing, vitality and beauty support. The concept "Where Nature Meets Science" reflects the ambition to combine natural ingredients with a modern approach to health.',
+        'In everyday life LONGEVITY BEAUTY stands out through a pleasant body feeling and a subjectively higher energy level. Many users are looking for more balance, mental clarity and physical wellbeing in a busy day — and that is exactly where this product comes in.',
+        'It can help you feel more energised, more focused and overall more vital. Users frequently report an improved body feeling and a clearer mind throughout the day.',
+        'As part of a balanced diet and an active lifestyle, LONGEVITY BEAUTY can support your body to feel lighter and more comfortable. The product is often associated with activated wellbeing and metabolic support.',
+        'Combined with movement and mindful eating, LONGEVITY BEAUTY can be a meaningful addition when the goal is a healthier body feeling and support for a slimmer figure.',
+        'The product feels high-quality and is designed for people who want to support their body holistically — especially in the areas of energy, beauty, wellbeing and inner balance.',
+        'MISS GLOW BEAUTY – LONGEVITY BEAUTY leaves a modern and promising impression for anyone who wants to add more vitality, inner balance and wellbeing to their everyday life. Particularly notable are the boost in energy, mental clarity and the pleasant body feeling. Combined with a healthy lifestyle, it can be a valuable companion.',
+      ],
+    },
+    highlights: {
+      de: [
+        'Where Nature Meets Science.',
+        'Vitalität, Balance und Beauty Support — von innen.',
+      ],
+      en: [
+        'Where Nature Meets Science.',
+        'Vitality, balance and beauty support — from within.',
+      ],
+    },
+    applicationTitle: { de: 'Anwendung', en: 'Application' },
+    applicationBody: {
+      de: '1 Teelöffel in etwas Tee, Wasser oder Kaffee einrühren — kann auch in einen Smoothie eingerührt werden.',
+      en: '1 teaspoon stirred into tea, water or coffee — also works in a smoothie.',
+    },
+    inci: {
+      de: 'INCI / Zutatenliste folgt.',
+      en: 'INCI / ingredient list to be added.',
+    },
+    faq: [
+      ...COMMON_FAQ,
+      {
+        question: {
+          de: 'Wie wende ich Longevity Beauty an?',
+          en: 'How do I take Longevity Beauty?',
+        },
+        answer: {
+          de: '1 Teelöffel in etwas Tee, Wasser oder Kaffee einrühren — kann auch in einen Smoothie eingerührt werden.',
+          en: '1 teaspoon stirred into tea, water or coffee — also works in a smoothie.',
+        },
+      },
+      {
+        question: {
+          de: 'Für wen ist Longevity Beauty geeignet?',
+          en: 'Who is Longevity Beauty suitable for?',
+        },
+        answer: {
+          de: 'Für alle, die ihren Körper ganzheitlich in den Bereichen Energie, Beauty, Wohlbefinden und innere Balance unterstützen möchten.',
+          en: 'For anyone wanting to holistically support their body across energy, beauty, wellbeing and inner balance.',
         },
       },
     ],

@@ -18,7 +18,7 @@ export default function PrivacyPolicyV2() {
       title={
         isDE ? 'Datenschutz auf einen Blick' : 'Data protection at a glance'
       }
-      heroImage='/newsletter.webp'
+      heroImage='/datenschutz.jpg'
       heroAlt={isDE ? 'Datenschutz' : 'Privacy'}>
       <LegalSection>
         <p className='text-xl sm:text-2xl text-foreground/90 leading-relaxed'>

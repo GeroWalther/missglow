@@ -7,24 +7,30 @@ export const MAGICLIPSPRICE = 69;
 export const FACECLEANSERPRICE = 21;
 export const MAGICELIXIRPRICE = 94;
 export const BETOXPRICE = 89;
+export const LONGEVITYPRICE = 110;
 //images
-export const productImgsLips = ['/MagicLips.jpg', '/lippen.jpg'];
-export const productImgsBetox = ['/betox.png', '/betox-eyes.jpeg'];
+export const productImgsLips = ['/newProdImages/magiclipsprod.jpg', '/newProdImages/magiclipstextur.jpg' , '/lippen.jpg'];
+export const productImgsBetox = ['/newProdImages/eyeliftingprod.jpg', '/newProdImages/eyeliftingserumtextur.jpg'];
 export const productImagesGlowCreme = [
-  '/glowcream1.png',
-  '/MagicGlowCreme1.JPG',
+  '/newProdImages/glowfaceprod.jpg',
+  '/newProdImages/GlowCreamTextur.jpg',
   '/MagicGlowCreme.JPG',
 ];
-export const productImagesFresh = ['/freshEyes.JPG', '/fresheyes2.jpg'];
+export const productImagesFresh = ['/newProdImages/fresheyesprod.jpg', '/newProdImages/FreshEyestextur.jpg',  '/betox-eyes.jpeg'];
 
 export const productImagesMagicElixir = [
-  '/MagicElixirProdBottleSolo.jpg',
-  '/MagicElixir.jpg',
+  '/newProdImages/magicelixirprod.jpg',
+  '/newProdImages/MagicElixir.jpg',
 ];
 
 export const productImagesFaceCleanser = [
-  '/FaceCleanserProductBottleSolo.jpg',
-  '/FaceCleanser.jpeg',
+  '/newProdImages/facecleanserprod.jpeg',
+  '/newProdImages/facecleansertextur.jpeg',
+];
+
+export const productImagesLongevity = [
+  '/newProdImages/longevityprod.jpeg',
+  '/newProdImages/longevitytextur.jpg',
 ];
 
 // testimonials gallery

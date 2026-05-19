@@ -6,12 +6,14 @@ import {
   BETOXPRICE,
   FACECLEANSERPRICE,
   FRESHEZESPRICE,
+  LONGEVITYPRICE,
   MAGICELIXIRPRICE,
   MAGICLIPSPRICE,
   PRICEMAGICGLOW,
   productImagesFaceCleanser,
   productImagesFresh,
   productImagesGlowCreme,
+  productImagesLongevity,
   productImagesMagicElixir,
   productImgsBetox,
   productImgsLips,
@@ -88,6 +90,17 @@ export default function ProductsHighlightV2() {
       price: FACECLEANSERPRICE,
       image: productImagesFaceCleanser[0],
     },
+    {
+      id: '7',
+      slug: '/longevity',
+      name: 'Longevity Beauty',
+      shortDescriptionDE:
+        'Wohlbefinden, Energie & Beauty Support — Where Nature Meets Science.',
+      shortDescriptionEN:
+        'Wellbeing, energy & beauty support — Where Nature Meets Science.',
+      price: LONGEVITYPRICE,
+      image: productImagesLongevity[0],
+    },
   ];
 
   return (
@@ -100,8 +113,8 @@ export default function ProductsHighlightV2() {
         </p>
         <h2 className='display-v2 text-4xl sm:text-6xl'>
           {isDE
-            ? 'Sechs Rituale. Ein Glow.'
-            : 'Six rituals. One radiant glow.'}
+            ? 'Sieben Rituale. Ein Glow.'
+            : 'Seven rituals. One radiant glow.'}
         </h2>
       </div>
       <div className='grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-10'>
