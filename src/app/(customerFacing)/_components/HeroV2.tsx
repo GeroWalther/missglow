@@ -17,7 +17,7 @@ export default function HeroV2() {
     <section className='relative overflow-hidden border-b border-border isolate'>
       {/* Background GIF — full bleed */}
       <Image
-        src='/Miss Glow Neue Produkt Bilder 2026/Video Startseite oben.gif'
+        src='/Miss Glow Neue Produkt Bilder 2026/Video fur startseite.gif'
         alt=''
         aria-hidden
         fill
