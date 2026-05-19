@@ -54,10 +54,11 @@ export default function HeroV2() {
           <div className='lg:col-span-5 lg:self-start flex flex-col items-center'>
             <div className='relative w-full aspect-square max-w-[520px]'>
               <Image
-                src='/startseite-bild.jpg'
+                src='/Miss Glow Neue Produkt Bilder 2026/Video fur startseite.gif'
                 alt='Miss Glow Beauty — hero'
                 fill
                 priority
+                unoptimized
                 sizes='(max-width: 1024px) 80vw, 40vw'
                 className='object-cover rounded-md'
               />
