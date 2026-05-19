@@ -30,7 +30,7 @@ export default function HeroV2() {
                 ? 'Miss Glow Beauty · Made in Germany'
                 : 'Miss Glow Beauty · Made in Germany'}
             </p>
-            <h1 className='display-v2 text-[clamp(2.75rem,7.5vw,6.5rem)] max-w-3xl whitespace-pre-line tracking-[-0.025em]'>
+            <h1 className='display-v2 text-[clamp(2.75rem,7.5vw,6.5rem)] max-w-3xl whitespace-pre-line tracking-[-0.025em] text-green-900'>
               {headline}
             </h1>
 
@@ -54,8 +54,8 @@ export default function HeroV2() {
           <div className='lg:col-span-5 lg:self-start flex flex-col items-center'>
             <div className='relative w-full aspect-square max-w-[520px]'>
               <Image
-                src='/missglow-product.jpg'
-                alt='Miss Glow Beauty — hero product'
+                src='/startseite-bild.jpg'
+                alt='Miss Glow Beauty — hero'
                 fill
                 priority
                 sizes='(max-width: 1024px) 80vw, 40vw'
