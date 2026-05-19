@@ -17,9 +17,10 @@ export default function CtaSectionV2() {
     <section className='container-page-v2 py-24'>
       <div className='relative overflow-hidden rounded-md border border-border min-h-[420px] lg:min-h-[480px]'>
         <Image
-          src='/lippenVivo.png'
+          src='/Miss Glow Neue Produkt Bilder 2026/Video Startseite oben.gif'
           alt=''
           fill
+          unoptimized
           sizes='100vw'
           className='object-cover'
         />
